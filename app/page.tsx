@@ -1,42 +1,84 @@
 "use client";
 
-import { useRef } from "react";
-import Autoplay from "embla-carousel-autoplay";
-import { Carousel } from "@mantine/carousel";
-import "@mantine/carousel/styles.css";
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import ss from "@/public/images/s2.jpg";
 
-function Component() {
-    const autoplay = useRef(Autoplay({ delay: 2000 }));
-    return (
-        <div className="max-w-5xl mx-auto w-full text-center flex items-center justify-center">
-            <Carousel
-                withIndicators
-                height={200}
-                plugins={[autoplay.current]}
-                onMouseEnter={autoplay.current.stop}
-                onMouseLeave={autoplay.current.reset}
-            >
-                <Carousel.Slide>
-                    <img
-                        src="https://cdn.pixabay.com/photo/2023/04/21/17/47/plum-blossoms-7942343_1280.jpg"
-                        className="w-full h-full mx-auto text-center"
-                    />
-                </Carousel.Slide>
-                <Carousel.Slide>
-                    <img src="https://cdn.pixabay.com/photo/2023/04/21/17/47/plum-blossoms-7942343_1280.jpg" />
-                </Carousel.Slide>
-                <Carousel.Slide>
-                    <img src="https://cdn.pixabay.com/photo/2023/04/21/17/47/plum-blossoms-7942343_1280.jpg" />
-                </Carousel.Slide>
-            </Carousel>
-        </div>
-    );
-}
+import "swiper/css";
+import "swiper/css/pagination";
+
+import { Autoplay } from "swiper/modules";
 
 export default function Home() {
     return (
-        <div className="max-w-5xl mx-auto w-full text-center flex items-center justify-center">
-            <Component />
+        <div>
+            <div>
+                <h1>Fotograf</h1>
+            </div>
+            <Swiper
+                loop
+                speed={5000}
+                autoplay={{
+                    delay: 0,
+                    disableOnInteraction: false,
+                }}
+                spaceBetween={30}
+                slidesPerView={3}
+                pagination={{
+                    dynamicBullets: true,
+                }}
+                modules={[Autoplay]}
+                className="mySwiper"
+            >
+                <SwiperSlide>
+                    <Image
+                        style={{
+                            height: "700px",
+                            width: "100%",
+                            objectFit: "cover",
+                        }}
+                        src={ss}
+                        width={1200}
+                        alt="..."
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <Image
+                        style={{
+                            height: "700px",
+                            width: "100%",
+                            objectFit: "cover",
+                        }}
+                        src={ss}
+                        width={1200}
+                        alt="..."
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <Image
+                        style={{
+                            height: "700px",
+                            width: "100%",
+                            objectFit: "cover",
+                        }}
+                        src={ss}
+                        width={1200}
+                        alt="..."
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <Image
+                        style={{
+                            height: "700px",
+                            width: "100%",
+                            objectFit: "cover",
+                        }}
+                        src={ss}
+                        width={1200}
+                        alt="..."
+                    />
+                </SwiperSlide>
+            </Swiper>
         </div>
     );
 }
