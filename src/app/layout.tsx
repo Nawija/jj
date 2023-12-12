@@ -6,25 +6,27 @@ import { Background } from "@/src/ui/background/Background";
 import { Header } from "@/src/ui/header/Header";
 
 export const metadata = {
-    title: "My app",
-    description: "I have followed setup instructions carefully",
+  title: "My app",
+  description: "I have followed setup instructions carefully",
 };
 
 export default function RootLayout({
-    children,
+  children,
 }: {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-    return (
-        <html lang="pl">
-            <head>
-                <ColorSchemeScript />
-            </head>
-            <body className="px-3">
-                <Header />
-                <MantineProvider>{children}</MantineProvider>
-                <Background />
-            </body>
-        </html>
-    );
+  return (
+    <html lang="pl">
+      <head>
+        <ColorSchemeScript />
+      </head>
+      <body>
+        <Header />
+        <MantineProvider>
+          <main className="px-1">{children}</main>
+        </MantineProvider>
+        <Background />
+      </body>
+    </html>
+  );
 }

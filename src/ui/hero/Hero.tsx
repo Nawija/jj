@@ -69,7 +69,13 @@ function Carousel() {
         >
             {imgSwiper.map((slide, index) => (
                 <SwiperSlide key={index}>
-                    <Suspense fallback={<div className="h-full w-full bg-red-200">Loading...</div>}>
+                    <Suspense
+                        fallback={
+                            <div className="h-full w-full bg-red-200">
+                                Loading...
+                            </div>
+                        }
+                    >
                         <Image
                             style={{
                                 height: "300px",
@@ -91,25 +97,21 @@ function Carousel() {
 
 export function Hero() {
     return (
-        <section className="flex justify-center lg:py-16 lg:pb-32 py-2 opacityAnimation relative mb-6 mt-6 lg:mt-0 w-full">
+        <section className="flex justify-center lg:py-6 lg:pb-24 py-2 opacityAnimation relative mb-6 mt-6 lg:mt-0 w-full">
             <div className="flex justify-center  ">
                 <div className="flex flex-col items-center justify-center">
                     <div className="flex flex-col justify-center items-center space-y-3 w-full ">
-                        <div className="flex flex-col md:items-start items-center justify-center  space-y-3 px-8 text-center ">
-                            <h1 className="text-3xl w-max md:text-7xl font-bold relative mb-4 lg:mb-6 bg-gradient-to-br from-white to-zinc-500 text-transparent bg-clip-text p-2">
-                                Odkryj Sztukę Fotografii
-                                <br /> Fotograf Siedlce
-                                <span className="text-base md:text-xl absolute w-max -bottom-6 right-6 font-light">
-                                    Jarek Olszewski
-                                </span>
-                            </h1>
-                        </div>
-                        <div className="w-full h-96 absolute top-[70%] left-0 -z-10">
-                            <Carousel />
-                        </div>
+                        <h1 className="text-3xl w-max md:text-7xl font-bold relative mb-4 lg:mb-6 bg-gradient-to-br from-white to-zinc-500 text-transparent bg-clip-text p-6 text-center">
+                            Odkryj Sztukę Fotografii
+                            <br /> Fotograf Siedlce
+                            <span className="text-base md:text-xl absolute w-max -bottom-6 right-6 font-light">
+                                Jarek Olszewski
+                            </span>
+                        </h1>
                     </div>
                 </div>
             </div>
+                        <Carousel />
         </section>
     );
 }
