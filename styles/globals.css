@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+html {
+    margin: 0;
+    padding: 0;
+    background-origin: border-box;
+}
+
+.flex-c {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.anim-opacity {
+    animation: anim-opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes anim-opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
