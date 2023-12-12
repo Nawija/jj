@@ -31,6 +31,10 @@ const imgSwiper = [
     alt: "s4",
   },
   {
+    src: s3Img,
+    alt: "s3",
+  },
+  {
     src: heroImg,
     alt: "heroImg",
   },
@@ -43,7 +47,7 @@ function Carousel() {
   useEffect(() => {
     setLoaded(true);
     const handleResize = () => {
-      setCarouselHeight(window.innerWidth < 1000 ? 300 : 500);
+      setCarouselHeight(window.innerWidth < 1000 ? 300 : 400);
     };
     window.addEventListener("resize", handleResize);
     handleResize();
@@ -77,21 +81,18 @@ function Carousel() {
       breakpoints={{
         320: {
           slidesPerView: 2,
-          spaceBetween: 20,
         },
 
         580: {
           slidesPerView: 3,
-          spaceBetween: 30,
         },
         1000: {
-          slidesPerView: 3,
-          spaceBetween: 30,
+          slidesPerView: 5,
         },
       }}
     >
       {imgSwiper.map((slide, index) => (
-        <SwiperSlide style={{ width: "80%" }} key={index}>
+        <SwiperSlide key={index}>
           <Image
             style={{
               width: "100%",
@@ -99,6 +100,7 @@ function Carousel() {
               objectFit: "cover",
               borderRadius: "9px",
             }}
+            loading="eager"
             draggable="false"
             height={400}
             width={600}
@@ -113,11 +115,11 @@ function Carousel() {
 
 export function Hero() {
   return (
-    <section className="opacityAnimation relative mx-auto mb-6 mt-6 w-full max-w-screen-2xl justify-center py-2 lg:mt-0 lg:flex lg:py-6 lg:pb-24">
+    <section className="-z-10 opacityAnimation max-w-screen relative mx-auto mb-6 mt-6 w-full justify-center py-2 lg:mt-0">
       <div className="flex justify-center  ">
         <div className="flex flex-col items-center justify-center">
           <div className="flex w-full flex-col items-center justify-center space-y-3 lg:justify-start ">
-            <h1 className="relative mb-4 w-max bg-gradient-to-br from-white to-zinc-500 bg-clip-text p-6 text-center text-3xl font-bold text-transparent md:text-6xl lg:mb-6 lg:text-start lg:text-7xl">
+            <h1 className="relative mb-4 w-max bg-gradient-to-br from-white to-zinc-500 bg-clip-text p-6 text-center text-3xl font-bold text-transparent md:text-6xl lg:mb-6 lg:text-7xl">
               Odkryj Sztukę Fotografii
               <br /> Fotograf Siedlce
             </h1>

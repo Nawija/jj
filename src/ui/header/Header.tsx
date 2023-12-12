@@ -32,7 +32,7 @@ export function Header() {
 
     return (
         <header
-            className={`text-gray-800 sticky top-0 left-0 w-full px-3 py-1 z-[999] transition-colors duration-300 ${
+            className={`text-white/80 sticky top-0 left-0 w-full px-3 py-1 z-[999] transition-colors duration-300 ${
                 !isScrolled ? "" : "bg-[#1f1f1fbe] shadow-lg backdrop-blur-sm"
             }`}
         >

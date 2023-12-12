@@ -22,8 +22,8 @@ export default function RootLayout({
         <meta name="theme-color" content="#000000" />
       </head>
       <body>
-        <Header />
         <MantineProvider>
+          <Header />
           <main className="px-1">{children}</main>
         </MantineProvider>
         <Background />
