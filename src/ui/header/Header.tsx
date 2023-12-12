@@ -32,12 +32,12 @@ export function Header() {
 
   return (
     <header
-      className={`sticky left-0 top-0 z-[999] w-full px-3 py-1 text-stone-800/80 transition-colors duration-300 ${
+      className={`sticky left-0 top-0 z-[999] w-full px-3 py-1 transition-colors duration-300 ${
         !isScrolled ? "" : "bg-[#ffffffbe] shadow-lg backdrop-blur-sm"
       }`}
     >
-      <div className="mx-auto flex max-w-screen-2xl items-center justify-between">
-        <Logo title="Jarek Olszewski" smallTitle="fotograf" hidden={false} />
+      <div className="justify- mx-auto flex max-w-screen-2xl items-center lg:justify-center">
+        <Logo title="Jarek Olszewski" smallTitle="fotograf" hidden={true} />
         <BurgerMenu showMenu={showMenu} handleMenu={handleMenu} />
         <NavLinksDesctop pathname={pathname} />
         <NavLinksMobile

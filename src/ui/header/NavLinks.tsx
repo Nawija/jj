@@ -9,6 +9,7 @@ const links = [
   { path: "/o-mnie", label: "O Mnie" },
   { path: "/oferta", label: "Oferta" },
   { path: "/galeria", label: "Galeria" },
+  { path: "/blog", label: "Blog" },
   { path: "/kontakt", label: "Kontakt" },
 ];
 
@@ -25,7 +26,7 @@ export function NavLinksDesctop({ pathname }: { pathname: string }) {
         <li className="list-none" key={link.label}>
           <Link
             href={link.path}
-            className={`rounded-xl px-3 py-2 text-[13px] font-semibold transition-colors hover:bg-white/10 hover:text-white ${
+            className={`rounded-xl px-3 py-2 text-[13px] font-semibold transition-colors hover:bg-white/10 hover:text-red-700 ${
               pathname === link.path ? "text-red-600 " : ""
             }`}
           >
@@ -33,8 +34,7 @@ export function NavLinksDesctop({ pathname }: { pathname: string }) {
           </Link>
         </li>
       ))}
-      <Logo title="Jarek Olszewski" smallTitle="fotograf" />{" "}
-      {/* Logo component */}
+      <Logo title="Jarek Olszewski" smallTitle="fotograf" />
       {links.slice(Math.ceil(links.length / 2)).map((link) => (
         <li className="list-none" key={link.label}>
           <Link
@@ -47,28 +47,6 @@ export function NavLinksDesctop({ pathname }: { pathname: string }) {
           </Link>
         </li>
       ))}
-      <Link
-        href={strefaKlientaLink.path}
-        className="flex items-center justify-center px-3 py-1.5 text-white"
-      >
-        <SecondButton className="py-2">
-          {strefaKlientaLink.label}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="2"
-            stroke="currentColor"
-            className="ml-1 h-3 w-3"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-            ></path>
-          </svg>
-        </SecondButton>
-      </Link>
     </div>
   );
 }
@@ -100,29 +78,6 @@ export function NavLinksMobile({
           </Link>
         </li>
       ))}
-      <Link
-        href={strefaKlientaLink.path}
-        onClick={handleMenu}
-        className="btn-main flex items-center justify-center px-3 py-1.5"
-      >
-        <SecondButton>
-          {strefaKlientaLink.label}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="2"
-            stroke="currentColor"
-            className="ml-1 h-3 w-3"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-            ></path>
-          </svg>
-        </SecondButton>
-      </Link>
     </div>
   );
 }

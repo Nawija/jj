@@ -115,13 +115,13 @@ function Carousel() {
 
 export function Hero() {
   return (
-    <section className="-z-10 opacityAnimation max-w-screen relative mx-auto mb-6 mt-6 w-full justify-center py-2 lg:mt-0">
+    <section className="opacityAnimation max-w-screen relative -z-10 mx-auto mb-6 mt-6 w-full justify-center py-2 lg:mt-0">
       <div className="flex justify-center  ">
         <div className="flex flex-col items-center justify-center">
           <div className="flex w-full flex-col items-center justify-center space-y-3 lg:justify-start ">
-            <h1 className="relative mb-4 w-max bg-gradient-to-br from-white to-zinc-500 bg-clip-text p-6 text-center text-3xl font-bold text-transparent md:text-6xl lg:mb-6 lg:text-7xl">
+            <h1 className="relative mb-4 w-max p-6 text-center text-3xl font-semibold md:text-5xl lg:mb-6 lg:text-6xl">
               Odkryj Sztukę Fotografii
-              <br /> Fotograf Siedlce
+              <br /> <strong className="font-semibold">Fotograf Siedlce</strong>
             </h1>
           </div>
         </div>

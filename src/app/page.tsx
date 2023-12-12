@@ -8,7 +8,7 @@ export default function Home() {
     return (
         <div className="anim-opacity">
             <Hero />
-            <div className="flex flex-wrap -m-4 container px-5 lg:px-12 pb-24 -mt-24 z-10 mx-auto">
+            {/* <div className="flex flex-wrap -m-4 container px-5 lg:px-12 pb-24 -mt-24 z-10 mx-auto">
                 <CardHomeInfo
                     href="/"
                     title="Fotografia Ślubna"
@@ -416,7 +416,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </div>
     );
 }
