@@ -20,7 +20,7 @@ export default function RootLayout({
             <head>
                 <ColorSchemeScript />
             </head>
-            <body>
+            <body className="px-3">
                 <Header />
                 <MantineProvider>{children}</MantineProvider>
                 <Background />
