@@ -16,7 +16,7 @@ export function Header() {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY >= 0) {
+            if (window.scrollY > 0) {
                 setIsScrolled(true);
             } else {
                 setIsScrolled(false);
@@ -33,7 +33,7 @@ export function Header() {
     return (
         <header
             className={`text-gray-800 sticky top-0 left-0 w-full px-3 py-1 z-[999] transition-colors duration-300 ${
-                !isScrolled ? "" : "bg-[#0b0b0bbe] shadow-lg"
+                !isScrolled ? "" : "bg-[#1f1f1fbe] shadow-lg backdrop-blur-sm"
             }`}
         >
             <div className="max-w-screen-2xl mx-auto flex items-center justify-between text-gray-400">
