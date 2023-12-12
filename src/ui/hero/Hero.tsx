@@ -36,19 +36,23 @@ const imgSwiper = [
   },
 ];
 
-const carouselHeight = 500;
-
 function Carousel() {
   const [loaded, setLoaded] = useState(false);
+  const [carouselHeight, setCarouselHeight] = useState(500);
 
   useEffect(() => {
     setLoaded(true);
+    const handleResize = () => {
+      setCarouselHeight(window.innerWidth < 1000 ? 300 : 500);
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
-
   if (!loaded) {
     return (
       <div
-        className={`flex h-[500px] w-full items-center justify-center  rounded-lg bg-gradient-to-tr from-zinc-800 to-zinc-500`}
+        className={`flex h-${carouselHeight} w-full items-center justify-center`}
       >
         <Loader color="white" type="dots" />
       </div>
@@ -87,12 +91,15 @@ function Carousel() {
       }}
     >
       {imgSwiper.map((slide, index) => (
-        <SwiperSlide key={index}>
+        <SwiperSlide style={{ width: "80%" }} key={index}>
           <Image
             style={{
+              width: "100%",
+              height: carouselHeight,
               objectFit: "cover",
               borderRadius: "9px",
             }}
+            draggable="false"
             height={400}
             width={600}
             src={slide.src}

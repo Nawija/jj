@@ -19,6 +19,7 @@ export default function RootLayout({
     <html lang="pl">
       <head>
         <ColorSchemeScript />
+        <meta name="theme-color" content="#000000" />
       </head>
       <body>
         <Header />
