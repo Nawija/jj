@@ -156,7 +156,6 @@ export default function OfertaPage() {
                     </label>
                     <textarea
                         className="mr-2 w-full px-4 py-3 h-24 rounded-lg border"
-                        type="text"
                         id="t1"
                         name="OpisFirmy"
                     />
@@ -167,7 +166,6 @@ export default function OfertaPage() {
                     </label>
                     <textarea
                         className="mr-2 w-full px-4 py-3 h-24 rounded-lg border"
-                        type="text"
                         id="t4"
                         name="IdentyfikacjaFirmy"
                     />
@@ -183,7 +181,6 @@ export default function OfertaPage() {
                     </label>
                     <textarea
                         className="mr-2 w-full px-4 py-3 h-24 rounded-lg border"
-                        type="text"
                         id="t5"
                         placeholder="Pomoze okreslic wyglad strony internetowej"
                         name="Inspiracja"
