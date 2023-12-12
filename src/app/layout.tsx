@@ -2,7 +2,6 @@ import "@mantine/core/styles.css";
 import "@/styles/globals.css";
 
 import { MantineProvider, ColorSchemeScript } from "@mantine/core";
-import { Background } from "@/src/ui/background/Background";
 import { Header } from "@/src/ui/header/Header";
 
 export const metadata = {
@@ -26,7 +25,6 @@ export default function RootLayout({
           <Header />
           <main className="px-1">{children}</main>
         </MantineProvider>
-        <Background />
       </body>
     </html>
   );

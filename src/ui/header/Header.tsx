@@ -6,46 +6,46 @@ import { Logo } from "./Logo";
 import { NavLinksDesctop, NavLinksMobile, BurgerMenu } from "./NavLinks";
 
 export function Header() {
-    const pathname = usePathname();
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [showMenu, setShowMenu] = useState(false);
+  const pathname = usePathname();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
-    function handleMenu() {
-        setShowMenu(!showMenu);
-    }
+  function handleMenu() {
+    setShowMenu(!showMenu);
+  }
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 0) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
-        };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
 
-        window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-    return (
-        <header
-            className={`text-white/80 sticky top-0 left-0 w-full px-3 py-1 z-[999] transition-colors duration-300 ${
-                !isScrolled ? "" : "bg-[#1f1f1fbe] shadow-lg backdrop-blur-sm"
-            }`}
-        >
-            <div className="max-w-screen-2xl mx-auto flex items-center justify-between text-gray-400">
-                <Logo title="Jarek Olszewski" smallTitle="fotograf" />
-                <BurgerMenu showMenu={showMenu} handleMenu={handleMenu} />
-                <NavLinksDesctop pathname={pathname} />
-                <NavLinksMobile
-                    showMenu={showMenu}
-                    pathname={pathname}
-                    handleMenu={handleMenu}
-                />
-            </div>
-        </header>
-    );
+  return (
+    <header
+      className={`sticky left-0 top-0 z-[999] w-full px-3 py-1 text-stone-800/80 transition-colors duration-300 ${
+        !isScrolled ? "" : "bg-[#ffffffbe] shadow-lg backdrop-blur-sm"
+      }`}
+    >
+      <div className="mx-auto flex max-w-screen-2xl items-center justify-between">
+        <Logo title="Jarek Olszewski" smallTitle="fotograf" hidden={false} />
+        <BurgerMenu showMenu={showMenu} handleMenu={handleMenu} />
+        <NavLinksDesctop pathname={pathname} />
+        <NavLinksMobile
+          showMenu={showMenu}
+          pathname={pathname}
+          handleMenu={handleMenu}
+        />
+      </div>
+    </header>
+  );
 }
