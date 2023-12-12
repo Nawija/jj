@@ -16,7 +16,7 @@ export function CardHomeInfo({
 }: CardHomeInfoProps) {
   return (
     <div className="p-4 lg:w-1/3">
-      <div className="relative h-full overflow-hidden rounded-lg border border-white/20 bg-stone-600/80 px-8 pb-12 pt-16 text-center">
+      <div className="relative h-full overflow-hidden rounded-lg border border-white/20 bg-stone-600/80 px-8 pb-12 pt-16 text-center backdrop-blur-sm">
         <p className="mb-1 text-xs  font-medium uppercase tracking-widest text-gray-200">
           Kategoria
         </p>
