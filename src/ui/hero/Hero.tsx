@@ -124,7 +124,7 @@ function Carousel() {
               src={slide.src}
               alt={slide.alt}
             />
-            <p className="text-center font-semibold mt-2 ">{slide.title}</p>
+            <p className="mt-2 text-center font-semibold ">{slide.title}</p>
           </div>
         </SwiperSlide>
       ))}
@@ -132,9 +132,35 @@ function Carousel() {
   );
 }
 
-export function Hero() {
+export async function Hero() {
+  const res = await fetch("https://graphql.datocms.com/", {
+    next: { revalidate: 600 },
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN}`,
+    },
+    body: JSON.stringify({
+      query: `{
+        reportazZChrztu {
+            img {
+              id
+              title
+              responsiveImage {
+                src
+                srcSet
+                webpSrcSet
+              }
+              url
+            }
+          }
+              }`,
+    }),
+  });
+  console.log(res);
   return (
-    <section className="opacityAnimation max-w-screen relative mx-auto mb-6 w-full justify-center py-2 lg:mt-0 max-w-screen-xl">
+    <section className="opacityAnimation max-w-screen relative mx-auto mb-6 w-full max-w-screen-xl justify-center py-2 lg:mt-0">
       <Carousel />
     </section>
   );

@@ -24,7 +24,7 @@ export default function RootLayout({
       <body>
         <MantineProvider>
           <Header />
-          <main className="px-1 text-[#2c332fee]">{children}</main>
+          <main>{children}</main>
         </MantineProvider>
       </body>
     </html>

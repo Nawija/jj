@@ -20,26 +20,12 @@ export function NavLinksDesctop({
   showMenu?: boolean;
 }) {
   return (
-    <div className="hidden items-center justify-center space-x-4 text-sm lg:flex">
-      {/* Place the Logo component in the middle */}
-      {links.slice(0, Math.ceil(links.length / 2)).map((link) => (
+    <div className="hidden items-center justify-center space-x-4 text-sm lg:flex sticky top-0">
+      {links.map((link) => (
         <li className="list-none" key={link.label}>
           <Link
             href={link.path}
-            className={`px-3 py-2 text-[14px] font-semibold transition-colors hover:bg-white/10 hover:text-red-700 ${
-              pathname === link.path ? "text-red-600 " : ""
-            }`}
-          >
-            {link.label}
-          </Link>
-        </li>
-      ))}
-      <Logo showMenu={showMenu} title="Jarek Olszewski" smallTitle="fotograf" />
-      {links.slice(Math.ceil(links.length / 2)).map((link) => (
-        <li className="list-none" key={link.label}>
-          <Link
-            href={link.path}
-            className={`rounded-xl px-3 py-2 text-[14px] font-semibold transition-colors hover:bg-white/10 hover:text-red-700 ${
+            className={`px-3 mx-3 py-2 text-[14px] transition-colors hover:bg-white/10 hover:text-red-700 ${
               pathname === link.path ? "text-red-600 " : ""
             }`}
           >
@@ -62,7 +48,7 @@ export function NavLinksMobile({
 }) {
   return (
     <div
-      className={`fixed left-0 top-0 flex h-screen w-72 flex-col items-center justify-center space-y-4 bg-white/90 text-sm shadow-2xl backdrop-blur-sm transition-transform duration-200 lg:hidden ${
+      className={`fixed left-0 top-0 flex h-screen w-72 flex-col items-center justify-center space-y-4 bg-black/90 text-sm shadow-2xl transition-transform duration-200 lg:hidden ${
         showMenu ? "translate-x-0" : "-translate-x-full"
       }`}
     >
@@ -70,7 +56,7 @@ export function NavLinksMobile({
         <li
           key={link.path}
           className={`px-4 py-3 font-semibold transition-colors hover:text-white ${
-            pathname === link.path ? "text-red-600 " : ""
+            pathname === link.path ? "text-red-600 font-medium " : ""
           }`}
         >
           <Link className="py-2" href={link.path} onClick={handleMenu}>
