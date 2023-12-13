@@ -39,7 +39,7 @@ export function Header() {
       <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between lg:justify-center">
         <Logo title="Jarek Olszewski" smallTitle="fotograf" hidden={true} />
         <BurgerMenu showMenu={showMenu} handleMenu={handleMenu} />
-        <NavLinksDesctop pathname={pathname} />
+        <NavLinksDesctop showMenu={showMenu} pathname={pathname} />
         <NavLinksMobile
           showMenu={showMenu}
           pathname={pathname}

@@ -12,7 +12,13 @@ const links = [
   { path: "/kontakt", label: "Kontakt" },
 ];
 
-export function NavLinksDesctop({ pathname }: { pathname: string }) {
+export function NavLinksDesctop({
+  pathname,
+  showMenu,
+}: {
+  pathname: string;
+  showMenu?: boolean;
+}) {
   return (
     <div className="hidden items-center justify-center space-x-4 text-sm lg:flex">
       {/* Place the Logo component in the middle */}
@@ -28,7 +34,7 @@ export function NavLinksDesctop({ pathname }: { pathname: string }) {
           </Link>
         </li>
       ))}
-      <Logo title="Jarek Olszewski" smallTitle="fotograf" />
+      <Logo showMenu={showMenu} title="Jarek Olszewski" smallTitle="fotograf" />
       {links.slice(Math.ceil(links.length / 2)).map((link) => (
         <li className="list-none" key={link.label}>
           <Link

@@ -54,7 +54,7 @@ function Carousel() {
   useEffect(() => {
     setLoaded(true);
     const handleResize = () => {
-      setCarouselHeight(window.innerWidth < 1000 ? 300 : 500);
+      setCarouselHeight(window.innerWidth < 1000 ? 300 : 400);
     };
     window.addEventListener("resize", handleResize);
     handleResize();
@@ -75,21 +75,21 @@ function Carousel() {
       effect={"coverflow"}
       freeMode={true}
       loop
-      speed={3000}
+      speed={1000}
       slidesPerView={3}
       autoplay={{
-        delay: 1000,
+        delay: 2000,
         disableOnInteraction: false,
       }}
-      spaceBetween={10}
+      spaceBetween={30}
       pagination={{
         dynamicBullets: true,
       }}
       coverflowEffect={{
-        rotate: 15,
+        rotate: 0,
         stretch: 0,
-        depth: 100,
-        modifier: 1,
+        depth: 110,
+        modifier: 3,
         slideShadows: false,
       }}
       modules={[Autoplay, EffectCoverflow]}
@@ -134,17 +134,7 @@ function Carousel() {
 
 export function Hero() {
   return (
-    <section className="opacityAnimation max-w-screen relative mx-auto mb-6 w-full justify-center py-2 lg:mt-0">
-      {/* <div className="flex justify-center  ">
-        <div className="flex flex-col items-center justify-center">
-          <div className="flex w-full flex-col items-center justify-center space-y-3 lg:justify-start ">
-            <h1 className="relative mb-4 w-max p-6 text-center text-3xl font-semibold md:text-5xl lg:mb-6 lg:text-6xl">
-              Odkryj Sztukę Fotografii
-              <br /> <strong className="font-semibold">Fotograf Siedlce</strong>
-            </h1>
-          </div>
-        </div>
-      </div> */}
+    <section className="opacityAnimation max-w-screen relative mx-auto mb-6 w-full justify-center py-2 lg:mt-0 max-w-screen-xl">
       <Carousel />
     </section>
   );

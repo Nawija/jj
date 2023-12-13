@@ -38,7 +38,7 @@ export default function OfertaPage() {
 
   return (
     <div className="anim-opacity opacityAnimation relative mx-auto mb-20 mt-[45vh] flex max-w-screen-2xl flex-wrap items-start justify-center md:mt-[60vh]">
-      <div className="fixed left-[45%] top-[45%] z-10 -translate-x-1/2 -translate-y-1/2 animate-bounce rounded-full p-2 text-white lg:left-1/2 lg:top-[60%]">
+      <div className="fixed left-[45%] top-[45%] z-10 -translate-x-1/2 -translate-y-1/2 animate-bounce rounded-full p-2 lg:left-1/2 lg:top-[60%]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -54,15 +54,14 @@ export default function OfertaPage() {
           />
         </svg>
       </div>
-      <div className="fixed left-0 top-0 h-[30vh] w-full lg:top-[3.2rem] ">
+      <div className="fixed left-0 top-0 h-[30vh] w-full lg:top-[4rem] ">
         <div className="lg:-z-10">
           <Image
-            className="rounded-lg lg:-rotate-12"
             src={HeroImg}
             alt="fotograf siedlce"
           />
         </div>
-        <div className="absolute left-1/2 top-[100%] -translate-x-1/2 -translate-y-1/2 text-center text-lg font-semibold tracking-wide text-white lg:left-[60%] lg:text-start lg:text-4xl lg:font-normal">
+        <div className="absolute left-1/2 top-[100%] -translate-x-1/2 -translate-y-1/2 text-center text-lg font-semibold tracking-wide lg:left-[60%] lg:text-start lg:text-4xl lg:font-semibold">
           <p>Wypełnij Formularz</p>
           <p className="-my-1 lg:my-0">lub</p>
           <p className="mb-3">Zadzwoń</p>
