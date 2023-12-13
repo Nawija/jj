@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { SecondButton } from "../buttons/SecondButton";
 import { Logo } from "@/src/ui/header/Logo"; // Import the Logo component
 
 const links = [
@@ -13,11 +12,6 @@ const links = [
   { path: "/kontakt", label: "Kontakt" },
 ];
 
-const strefaKlientaLink = {
-  path: "/strefa-klienta",
-  label: "Strefa Klienta",
-};
-
 export function NavLinksDesctop({ pathname }: { pathname: string }) {
   return (
     <div className="hidden items-center justify-center space-x-4 text-sm lg:flex">
@@ -26,7 +20,7 @@ export function NavLinksDesctop({ pathname }: { pathname: string }) {
         <li className="list-none" key={link.label}>
           <Link
             href={link.path}
-            className={`rounded-xl px-3 py-2 text-[13px] font-semibold transition-colors hover:bg-white/10 hover:text-red-700 ${
+            className={`px-3 py-2 text-[14px] font-semibold transition-colors hover:bg-white/10 hover:text-red-700 ${
               pathname === link.path ? "text-red-600 " : ""
             }`}
           >
@@ -39,7 +33,7 @@ export function NavLinksDesctop({ pathname }: { pathname: string }) {
         <li className="list-none" key={link.label}>
           <Link
             href={link.path}
-            className={`rounded-xl px-3 py-2 text-[13px] font-semibold transition-colors hover:bg-white/10 hover:text-white ${
+            className={`rounded-xl px-3 py-2 text-[14px] font-semibold transition-colors hover:bg-white/10 hover:text-red-700 ${
               pathname === link.path ? "text-red-600 " : ""
             }`}
           >
@@ -62,7 +56,7 @@ export function NavLinksMobile({
 }) {
   return (
     <div
-      className={`fixed left-0 top-0 flex h-screen w-72 flex-col items-center justify-center space-y-4 bg-[#0B0B0B] text-sm shadow-2xl transition-transform duration-200 lg:hidden ${
+      className={`fixed left-0 top-0 flex h-screen w-72 flex-col items-center justify-center space-y-4 bg-white/90 text-sm shadow-2xl backdrop-blur-sm transition-transform duration-200 lg:hidden ${
         showMenu ? "translate-x-0" : "-translate-x-full"
       }`}
     >
@@ -70,7 +64,7 @@ export function NavLinksMobile({
         <li
           key={link.path}
           className={`px-4 py-3 font-semibold transition-colors hover:text-white ${
-            pathname === link.path ? "text-white " : ""
+            pathname === link.path ? "text-red-600 " : ""
           }`}
         >
           <Link className="py-2" href={link.path} onClick={handleMenu}>
@@ -98,17 +92,17 @@ export function BurgerMenu({
       onClick={handleMenu}
     >
       <div
-        className={`h-0.5 rounded-lg bg-white transition-all ${
+        className={`h-0.5 rounded-lg bg-red-600 transition-all ${
           showMenu ? "w-4 -rotate-45 scale-110" : "m-1 w-4"
         }`}
       />
       <div
-        className={` h-0.5 rounded-lg bg-white transition-all ${
+        className={` h-0.5 rounded-lg bg-red-600 transition-all ${
           showMenu ? "scale-0" : "m-1 w-3"
         }`}
       />
       <div
-        className={` h-0.5 rounded-lg bg-white transition-all ${
+        className={` h-0.5 rounded-lg bg-red-600 transition-all ${
           showMenu ? "w-4 -translate-y-1 rotate-45 scale-110" : "m-1 w-4"
         }`}
       />

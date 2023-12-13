@@ -36,7 +36,7 @@ export function Header() {
         !isScrolled ? "" : "bg-[#ffffffbe] shadow-lg backdrop-blur-sm"
       }`}
     >
-      <div className="justify- mx-auto flex max-w-screen-2xl items-center lg:justify-center">
+      <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between lg:justify-center">
         <Logo title="Jarek Olszewski" smallTitle="fotograf" hidden={true} />
         <BurgerMenu showMenu={showMenu} handleMenu={handleMenu} />
         <NavLinksDesctop pathname={pathname} />

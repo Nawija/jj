@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import { Images } from "@/src/ui/galeria/Images";
 // import Bridge from "@/components/Icons/Bridge";
 

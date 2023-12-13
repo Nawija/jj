@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
+// import Link from "next/link";
 import { Hero } from "@/src/ui/hero/Hero";
-import { CardHomeInfo } from "@/src/ui/cards/CardHomeInfo";
+// import { CardHomeInfo } from "@/src/ui/cards/CardHomeInfo";
 
 export default function Home() {
     return (
