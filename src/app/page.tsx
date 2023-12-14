@@ -113,7 +113,7 @@ export default function Home() {
             </h1>
 
             <p className="mx-auto text-base font-medium leading-relaxed text-black/80">
-              Free and Premium themes, UI Kit's, templates and landing pages
+              Free and Premium themes, templates and landing pages
               built with Tailwind CSS, HTML Next.js.
             </p>
           </div>
@@ -170,7 +170,7 @@ export default function Home() {
                 Button
               </button>
               <p className="mt-3 text-xs text-black/70">
-                Literally you probably haven't heard of them jean shorts.
+                Literally you probably havent heard of them jean shorts.
               </p>
             </div>
           </div>
