@@ -3,11 +3,9 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCoverflow, Navigation } from "swiper/modules";
+import { Autoplay, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "swiper/css/navigation";
-import "@/src/ui/hero/CarouselPolaroid.css";
 
 import heroImg from "@/public/images/jarek-olszewski.jpg";
 import s1Img from "@/public/images/s1.jpg";
@@ -49,17 +47,6 @@ const imgSwiper = [
 ];
 
 export default async function CarouselPolaroid() {
-  const [carouselHeight, setCarouselHeight] = useState(500);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setCarouselHeight(window.innerWidth < 1000 ? 300 : 400);
-    };
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
     <Swiper
       effect={"coverflow"}
@@ -82,7 +69,7 @@ export default async function CarouselPolaroid() {
         modifier: 5,
         slideShadows: false,
       }}
-      modules={[Autoplay, EffectCoverflow, Navigation]}
+      modules={[Autoplay, EffectCoverflow]}
       className="mySwiper mx-auto max-w-screen-xl"
       breakpoints={{
         320: {
@@ -103,7 +90,7 @@ export default async function CarouselPolaroid() {
             <Image
               style={{
                 width: "100%",
-                height: carouselHeight,
+                height: '400px',
                 objectFit: "cover",
                 borderRadius: "2px",
               }}
