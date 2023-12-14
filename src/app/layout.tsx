@@ -1,8 +1,6 @@
-import "@mantine/core/styles.css";
 import "@/styles/globals.css";
 
 import React from "react";
-import { MantineProvider, ColorSchemeScript } from "@mantine/core";
 import { Header } from "@/src/ui/header/Header";
 
 export const metadata = {
@@ -18,14 +16,14 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <head>
-        <ColorSchemeScript />
+
         <meta name="theme-color" content="#000000" />
       </head>
       <body>
         <Header />
-        <MantineProvider>
+
           <main>{children}</main>
-        </MantineProvider>
+
       </body>
     </html>
   );
