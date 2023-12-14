@@ -80,8 +80,7 @@ export async function EffectFadeCarousel() {
               src={img.src}
               alt={img.alt}
               title={img.title}
-              loading="eager"
-              draggable="false"
+              loading={img.src === s1Img ? "eager" : "lazy"}
               sizes="(min-width: 1668px) 100vw, (max-width: 786px) 50vw, 33vw"
               className="anim-scale"
             />
