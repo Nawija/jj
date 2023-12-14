@@ -18,8 +18,8 @@ export function NavLinksDesctop({ pathname }: { pathname: string }) {
         <li className="list-none" key={link.label}>
           <Link
             href={link.path}
-            className={`mx-3 px-2 py-2 text-[14px] font-medium transition-colors hover:text-yellow-500   ${
-              pathname === link.path ? "text-yellow-500" : ""
+            className={`mx-3 px-2 py-2 text-[14px] font-medium transition-colors hover:text-amber-800   ${
+              pathname === link.path ? "text-amber-500" : ""
             }`}
           >
             {link.label}
