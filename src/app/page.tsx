@@ -7,11 +7,11 @@ export default function Home() {
   return (
     <div className="anim-opacity mx-auto max-w-[2000px]">
       <section className="relative w-full -z-10">
-        <div className="absolute left-1/2 top-[70%] z-10 w-3/4 -translate-x-1/2 -translate-y-1/2 text-center text-white">
+        <div className="absolute left-1/2 top-[74%] z-10 w-3/4 -translate-x-1/2 -translate-y-1/2 text-center text-white">
           <p className=" mb-6 text-3xl font-semibold lg:text-8xl text-white/70 mix-blend-difference">
             PRAWDZIWA FOTOGRAFIA
           </p>
-          <p className="mb-12 text-sm text-white/80">
+          <p className="mb-12 text-sm text-white/80 mx-auto sm:w-3/4">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt
             maiores at quis illum facilis magnam dolorum illo eius quidem autem,
             doloribus harum accusamus. Sed, illo similique. Aliquam, commodi.
