@@ -12,6 +12,7 @@ import s1Img from "@/public/images/s1.jpg";
 import s2Img from "@/public/images/s2.jpg";
 import s3Img from "@/public/images/s3.jpg";
 import s4Img from "@/public/images/s4.jpg";
+import ShadowBg from "../ShadowBg";
 
 const imgSwiper = [
   {
@@ -64,7 +65,7 @@ export async function EffectFadeCarousel() {
           disableOnInteraction: false,
         }}
         modules={[EffectFade, Autoplay]}
-        className="mySwiper relative h-[600px]"
+        className="mySwiper relative -z-20 h-[600px]"
       >
         {imgSwiper.map((img, index) => (
           <SwiperSlide key={index}>
@@ -84,9 +85,9 @@ export async function EffectFadeCarousel() {
               sizes="(min-width: 1668px) 100vw, (max-width: 786px) 50vw, 33vw"
               className="anim-scale"
             />
+            <ShadowBg z={30} />
           </SwiperSlide>
         ))}
-        <div className="absolute left-0 top-0 z-20 h-full w-full bg-black/60" />
       </Swiper>
     </>
   );

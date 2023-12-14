@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCoverflow } from "swiper/modules";
@@ -51,7 +50,7 @@ export default async function CarouselPolaroid() {
     <Swiper
       effect={"coverflow"}
       freeMode={true}
-      navigation={true}
+      navigation={false}
       loop
       speed={1000}
       autoplay={{
@@ -59,9 +58,6 @@ export default async function CarouselPolaroid() {
         disableOnInteraction: false,
       }}
       spaceBetween={100}
-      pagination={{
-        dynamicBullets: true,
-      }}
       coverflowEffect={{
         rotate: 0,
         stretch: 0,
