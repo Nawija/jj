@@ -45,7 +45,7 @@ const imgSwiper = [
   },
 ];
 
-export default async function CarouselPolaroid() {
+export default function CarouselPolaroid() {
   return (
     <Swiper
       effect={"coverflow"}

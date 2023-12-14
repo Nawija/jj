@@ -82,7 +82,7 @@ export default function Home() {
 
             <p className="mx-auto text-base font-medium leading-relaxed text-black/80">
               Free and Premium themes, UI Kit's, templates and landing pages
-              built with Tailwind CSS, HTML &amp; Next.js.
+              built with Tailwind CSS, HTML Next.js.
             </p>
           </div>
           <div className="p-6">
@@ -98,7 +98,7 @@ export default function Home() {
 
             <p className="mx-auto text-base font-medium leading-relaxed text-black/80">
               Free and Premium themes, UI Kit's, templates and landing pages
-              built with Tailwind CSS, HTML &amp; Next.js.
+              built with Tailwind CSS, HTML Next.js.
             </p>
           </div>
           <div className="p-6">
@@ -114,7 +114,7 @@ export default function Home() {
 
             <p className="mx-auto text-base font-medium leading-relaxed text-black/80">
               Free and Premium themes, UI Kit's, templates and landing pages
-              built with Tailwind CSS, HTML &amp; Next.js.
+              built with Tailwind CSS, HTML Next.js.
             </p>
           </div>
         </div>

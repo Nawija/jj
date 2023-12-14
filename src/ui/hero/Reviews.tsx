@@ -51,7 +51,7 @@ const reviewSwiper = [
   },
 ];
 
-export default async function Review() {
+export default function Review() {
   return (
     <Swiper
       effect={"coverflow"}
