@@ -81,7 +81,7 @@ export default function Home() {
             </h1>
 
             <p className="mx-auto text-base font-medium leading-relaxed text-black/80">
-              Free and Premium themes, UI Kit's, templates and landing pages
+              Free and Premium themes, UI Kis, templates and landing pages
               built with Tailwind CSS, HTML Next.js.
             </p>
           </div>
@@ -97,7 +97,7 @@ export default function Home() {
             </h1>
 
             <p className="mx-auto text-base font-medium leading-relaxed text-black/80">
-              Free and Premium themes, UI Kit's, templates and landing pages
+              Free and Premium themes, UI Kis, templates and landing pages
               built with Tailwind CSS, HTML Next.js.
             </p>
           </div>
