@@ -60,7 +60,7 @@ export async function EffectFadeCarousel() {
         navigation={false}
         speed={3000}
         autoplay={{
-          delay: 1000,
+          delay: 1500,
           disableOnInteraction: false,
         }}
         modules={[EffectFade, Autoplay]}
@@ -76,10 +76,12 @@ export async function EffectFadeCarousel() {
                 objectPosition: `50% ${img.position}`,
               }}
               height={1200}
-              width={2400}
+              width={1400}
               src={img.src}
               alt={img.alt}
               title={img.title}
+              loading="eager"
+              draggable="false"
               sizes="(min-width: 1668px) 100vw, (max-width: 786px) 50vw, 33vw"
               className="anim-scale"
             />

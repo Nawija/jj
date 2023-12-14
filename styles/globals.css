@@ -24,12 +24,12 @@ body {
   }
 }
 .anim-scale {
-  animation: anim-scale 15s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite
+  animation: anim-scale 13s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite
     alternate-reverse;
 }
 @keyframes anim-scale {
   0% {
-    scale: 1.3;
+    scale: 1.4;
   }
   100% {
     scale: 1;

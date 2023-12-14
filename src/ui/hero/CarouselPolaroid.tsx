@@ -106,12 +106,13 @@ export default async function CarouselPolaroid() {
                 objectFit: "cover",
                 borderRadius: "2px",
               }}
-              loading="eager"
+              loading="lazy"
               draggable="false"
               height={300}
               width={400}
               src={slide.src}
               alt={slide.alt}
+              sizes="(min-width: 1668px) 80vw, (max-width: 786px) 50vw, 33vw"
             />
             <p className="mt-2 text-center font-semibold ">{slide.title}</p>
           </div>
