@@ -2,7 +2,7 @@
 
 // import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade, Pagination } from "swiper/modules";
+import { Autoplay, EffectFade } from "swiper/modules";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -18,31 +18,37 @@ const imgSwiper = [
     src: s1Img,
     alt: "s1",
     title: "Ania & Tomek",
+    position: "40%",
   },
   {
     src: s2Img,
     alt: "s2",
     title: "Ania & Tomek",
+    position: "40%",
   },
   {
     src: s3Img,
     alt: "s3",
     title: "Ania & Tomek",
+    position: "30%",
   },
   {
     src: s4Img,
     alt: "s4",
     title: "Ania & Tomek",
+    position: "50%",
   },
   {
     src: s3Img,
     alt: "s3",
     title: "Ania & Tomek",
+    position: "30%",
   },
   {
     src: heroImg,
     alt: "heroImg",
     title: "Jarosław",
+    position: "20%",
   },
 ];
 
@@ -50,34 +56,35 @@ export async function EffectFadeCarousel() {
   return (
     <>
       <Swiper
-        spaceBetween={30}
         effect={"fade"}
-        navigation={true}
-        pagination={{
-          clickable: true,
-        }}
+        navigation={false}
         speed={3000}
         autoplay={{
           delay: 1000,
           disableOnInteraction: false,
         }}
         modules={[EffectFade, Autoplay]}
-        className="mySwiper"
+        className="mySwiper relative h-[600px]"
       >
         {imgSwiper.map((img, index) => (
           <SwiperSlide key={index}>
             <Image
-              style={{ width: "100%" }}
-              height={700}
-              width={1200}
+              style={{
+                width: "100%",
+                height: "600px",
+                objectFit: "cover",
+                objectPosition: `50% ${img.position}`,
+              }}
+              height={1200}
+              width={2400}
               src={img.src}
               alt={img.alt}
               title={img.title}
               className="anim-scale"
             />
-            <div className="absolute left-0 top-0 h-full w-full bg-black/60" />
           </SwiperSlide>
         ))}
+        <div className="absolute left-0 top-0 z-20 h-full w-full bg-black/60" />
       </Swiper>
     </>
   );

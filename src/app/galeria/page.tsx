@@ -9,8 +9,8 @@ import s4img from "@/public/images/s4.jpg";
 export default function Galeria() {
   return (
     <>
-      <div className="anim-opacity columns-1 gap-4 text-sm sm:columns-2 xl:columns-3 2xl:columns-5 lg:px-2">
-        <div className="after:content shadow-highlight after:shadow-highlight relative mb-5 flex h-[300px] flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-black/90 px-6 text-center text-white after:pointer-events-none after:absolute after:inset-0 after:rounded-lg lg:pt-0">
+      <div className="anim-opacity columns-1 gap-4 text-sm sm:columns-2 lg:px-2 xl:columns-3 2xl:columns-5">
+        <div className="after:content shadow-highlight after:shadow-highlight relative mb-5 flex h-[300px] flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-black/90 px-6 text-center text-black after:pointer-events-none after:absolute after:inset-0 after:rounded-lg lg:pt-0">
           <p className="max-w-[40ch] text-white/80 sm:max-w-[32ch]">
             Serdecznie witam, galeria zdjęć, które uwieczniły wyjątkowe chwile z
             tego niepowtarzalnego wydarzenia.
@@ -37,12 +37,12 @@ export default function Galeria() {
         <Images img={s4img} />
         <Images img={s4img} />
       </div>
-      <footer className="p-6 text-center text-sm text-white/80 sm:p-12">
+      <footer className="mt-12 p-6 text-center text-lg font-semibold text-black sm:p-12">
         Dziękuję za skorzystanie z moich usług, Podziel się opinią na{" "}
         <a
           href="/"
           target="_blank"
-          className="font-semibold text-white hover:text-white/80"
+          className="font-semibold text-yellow-500 hover:text-yellow-600"
           rel="noreferrer"
         >
           Google
@@ -51,7 +51,7 @@ export default function Galeria() {
         <a
           href="/"
           target="_blank"
-          className="font-semibold text-white hover:text-white/80"
+          className="font-semibold text-yellow-500 hover:text-yellow-600"
           rel="noreferrer"
         >
           Facebook

@@ -34,21 +34,20 @@ export function Header() {
 
   return (
     <header
-      className={clsx(`z-[999] w-full px-3 py-1 transition-colors ${
-        !isScrolled
-          ? ""
-          : "bg-[#ffffffeb] font-semibold text-gray-800 shadow-lg"
-      }
-    ${pathname === "/" ? "fixed left-0 top-0 text-white/80" : ""}
-    ${pathname === "/galeria" ? "mb-4 bg-black/90" : ""}`)}
+      className={clsx(
+        `z-[999] flex w-full items-center justify-between px-3 font-normal`,
+        {
+          "sticky left-0 top-0 bg-white text-black shadow-lg": isScrolled,
+        },
+      )}
     >
       <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between">
         <Link href="/" className={`flex-c relative z-50 lg:px-20 lg:py-3`}>
-          <div className="relative -mt-1">
+          <div className="relative">
             <p
-              className={`transition-transform lg:text-3xl ${
+              className={`text-xl transition-transform lg:text-3xl ${
                 playball.className
-              } ${isScrolled ? "scale-75" : ""}`}
+              } ${showMenu ? "text-yellow-500" : ""}`}
             >
               Jarek Olszewski
             </p>

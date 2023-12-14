@@ -18,8 +18,8 @@ export function NavLinksDesctop({ pathname }: { pathname: string }) {
         <li className="list-none" key={link.label}>
           <Link
             href={link.path}
-            className={`mx-3 rounded-xl px-3 py-2 text-[14px] font-medium transition-colors duration-300 hover:bg-white/20 hover:text-red-600 ${
-              pathname === link.path ? "text-red-500" : ""
+            className={`mx-3 px-2 py-2 text-[14px] font-medium transition-colors hover:text-yellow-500   ${
+              pathname === link.path ? "text-yellow-500" : ""
             }`}
           >
             {link.label}
@@ -41,7 +41,7 @@ export function NavLinksMobile({
 }) {
   return (
     <div
-      className={`fixed left-0 top-0 flex h-screen w-72 flex-col items-center justify-center space-y-4 bg-black/90 text-sm shadow-2xl transition-transform duration-200 lg:hidden ${
+      className={`fixed left-0 top-0 flex h-screen w-72 flex-col items-center justify-center space-y-4 bg-black text-sm shadow-2xl transition-transform duration-200 lg:hidden text-white/80 z-40 ${
         showMenu ? "translate-x-0" : "-translate-x-full"
       }`}
     >
@@ -49,7 +49,7 @@ export function NavLinksMobile({
         <li
           key={link.path}
           className={`px-4 py-3 font-semibold transition-colors hover:text-white ${
-            pathname === link.path ? "font-medium text-red-600 " : ""
+            pathname === link.path ? "font-medium text-yellow-500 " : ""
           }`}
         >
           <Link className="py-2" href={link.path} onClick={handleMenu}>
@@ -77,17 +77,17 @@ export function BurgerMenu({
       onClick={handleMenu}
     >
       <div
-        className={`h-0.5 rounded-lg bg-red-600 transition-all ${
+        className={`h-0.5 rounded-lg bg-yellow-500 transition-all ${
           showMenu ? "w-4 -rotate-45 scale-110" : "m-1 w-4"
         }`}
       />
       <div
-        className={` h-0.5 rounded-lg bg-red-600 transition-all ${
+        className={` h-0.5 rounded-lg bg-yellow-500 transition-all ${
           showMenu ? "scale-0" : "m-1 w-3"
         }`}
       />
       <div
-        className={` h-0.5 rounded-lg bg-red-600 transition-all ${
+        className={` h-0.5 rounded-lg bg-yellow-500 transition-all ${
           showMenu ? "w-4 -translate-y-1 rotate-45 scale-110" : "m-1 w-4"
         }`}
       />

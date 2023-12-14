@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Loader } from "@mantine/core";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
+import "swiper/css/navigation";
 
 import heroImg from "@/public/images/jarek-olszewski.jpg";
 import s1Img from "@/public/images/s1.jpg";
@@ -47,12 +47,10 @@ const imgSwiper = [
   },
 ];
 
-function Carousel() {
-  const [loaded, setLoaded] = useState(false);
+export default async function CarouselPolaroid() {
   const [carouselHeight, setCarouselHeight] = useState(500);
 
   useEffect(() => {
-    setLoaded(true);
     const handleResize = () => {
       setCarouselHeight(window.innerWidth < 1000 ? 300 : 400);
     };
@@ -60,40 +58,31 @@ function Carousel() {
     handleResize();
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  if (!loaded) {
-    return (
-      <div
-        className={`flex h-${carouselHeight} w-full items-center justify-center`}
-      >
-        <Loader color="white" type="dots" />
-      </div>
-    );
-  }
 
   return (
     <Swiper
       effect={"coverflow"}
       freeMode={true}
+      navigation={true}
       loop
       speed={1000}
-      slidesPerView={3}
       autoplay={{
         delay: 2000,
         disableOnInteraction: false,
       }}
-      spaceBetween={30}
+      spaceBetween={100}
       pagination={{
         dynamicBullets: true,
       }}
       coverflowEffect={{
         rotate: 0,
         stretch: 0,
-        depth: 110,
-        modifier: 3,
+        depth: 50,
+        modifier: 5,
         slideShadows: false,
       }}
       modules={[Autoplay, EffectCoverflow]}
-      className="mySwiper anim-opacity"
+      className="mySwiper mx-auto max-w-screen-xl"
       breakpoints={{
         320: {
           slidesPerView: 1,
@@ -109,7 +98,7 @@ function Carousel() {
     >
       {imgSwiper.map((slide, index) => (
         <SwiperSlide key={index}>
-          <div className="my-4 bg-gradient-to-tr from-gray-50 to-zinc-100 p-4 shadow-lg">
+          <div className="my-4 bg-white p-4 shadow-lg">
             <Image
               style={{
                 width: "100%",
@@ -129,38 +118,5 @@ function Carousel() {
         </SwiperSlide>
       ))}
     </Swiper>
-  );
-}
-
-export async function Hero() {
-  const res = await fetch("https://graphql.datocms.com/", {
-    next: { revalidate: 600 },
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Authorization: `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN}`,
-    },
-    body: JSON.stringify({
-      query: `{
-        reportazZChrztu {
-            img {
-              id
-              title
-              responsiveImage {
-                src
-                srcSet
-                webpSrcSet
-              }
-              url
-            }
-          }
-              }`,
-    }),
-  });
-  return (
-    <section className="opacityAnimation max-w-screen relative mx-auto mb-6 w-full max-w-screen-xl justify-center py-2 lg:mt-0">
-      <Carousel />
-    </section>
   );
 }
