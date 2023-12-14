@@ -13,7 +13,7 @@ const links = [
 
 export function NavLinksDesctop({ pathname }: { pathname: string }) {
   return (
-    <div className="hidden items-center justify-center space-x-4 text-sm lg:flex">
+    <ul className="hidden items-center justify-center space-x-4 text-sm lg:flex"> 
       {links.map((link) => (
         <li className="list-none" key={link.label}>
           <Link
@@ -26,7 +26,7 @@ export function NavLinksDesctop({ pathname }: { pathname: string }) {
           </Link>
         </li>
       ))}
-    </div>
+    </ul>
   );
 }
 
@@ -40,7 +40,7 @@ export function NavLinksMobile({
   handleMenu: () => void;
 }) {
   return (
-    <div
+    <ul
       className={`fixed left-0 top-0 flex h-screen w-72 flex-col items-center justify-center space-y-4 bg-black text-sm shadow-2xl transition-transform duration-200 lg:hidden text-white/80 z-40 ${
         showMenu ? "translate-x-0" : "-translate-x-full"
       }`}
@@ -57,7 +57,7 @@ export function NavLinksMobile({
           </Link>
         </li>
       ))}
-    </div>
+    </ul>
   );
 }
 
