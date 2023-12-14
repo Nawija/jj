@@ -35,7 +35,7 @@ export function Header() {
   return (
     <header
       className={clsx(
-        `z-[999] flex w-full items-center justify-between px-3 font-normal`,
+        `z-[999] flex w-full items-center justify-between px-3 py-1 lg:py-0 font-normal`,
         {
           "sticky left-0 top-0 bg-white text-black shadow-lg": isScrolled,
         },
@@ -45,7 +45,7 @@ export function Header() {
         <Link href="/" className={`flex-c relative z-50 lg:px-20 lg:py-3`}>
           <div className="relative">
             <p
-              className={`text-xl transition-transform lg:text-3xl ${
+              className={`text-2xl transition-transform lg:text-3xl ${
                 playball.className
               } ${showMenu ? "text-yellow-500" : ""}`}
             >
