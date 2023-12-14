@@ -14,7 +14,7 @@ export function Images({ img }: ImageType) {
         >
             <Image
                 alt="fotografia jarek olszewski"
-                className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
+                className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110 shadow-xl"
                 placeholder="blur"
                 src={img}
                 width={520}

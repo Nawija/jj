@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCoverflow } from "swiper/modules";
+import { Autoplay, EffectCoverflow, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
+import "@/src/ui/hero/CarouselPolaroid.css";
 
 import heroImg from "@/public/images/jarek-olszewski.jpg";
 import s1Img from "@/public/images/s1.jpg";
@@ -81,7 +82,7 @@ export default async function CarouselPolaroid() {
         modifier: 5,
         slideShadows: false,
       }}
-      modules={[Autoplay, EffectCoverflow]}
+      modules={[Autoplay, EffectCoverflow, Navigation]}
       className="mySwiper mx-auto max-w-screen-xl"
       breakpoints={{
         320: {

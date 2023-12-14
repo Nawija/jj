@@ -1,5 +1,4 @@
 import { Images } from "@/src/ui/galeria/Images";
-// import Bridge from "@/components/Icons/Bridge";
 
 import s1img from "@/public/images/s1.jpg";
 import s2img from "@/public/images/s2.jpg";
