@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { Logo } from "@/src/ui/header/Logo"; // Import the Logo component
 
 const links = [
   { path: "/", label: "Start" },
@@ -12,21 +11,15 @@ const links = [
   { path: "/kontakt", label: "Kontakt" },
 ];
 
-export function NavLinksDesctop({
-  pathname,
-  showMenu,
-}: {
-  pathname: string;
-  showMenu?: boolean;
-}) {
+export function NavLinksDesctop({ pathname }: { pathname: string }) {
   return (
-    <div className="hidden items-center justify-center space-x-4 text-sm lg:flex sticky top-0">
+    <div className="hidden items-center justify-center space-x-4 text-sm lg:flex">
       {links.map((link) => (
         <li className="list-none" key={link.label}>
           <Link
             href={link.path}
-            className={`px-3 mx-3 py-2 text-[14px] transition-colors hover:bg-white/10 hover:text-red-700 ${
-              pathname === link.path ? "text-red-600 " : ""
+            className={`mx-3 rounded-xl px-3 py-2 text-[14px] font-medium transition-colors duration-300 hover:bg-white/20 hover:text-red-600 ${
+              pathname === link.path ? "text-red-500" : ""
             }`}
           >
             {link.label}
@@ -56,7 +49,7 @@ export function NavLinksMobile({
         <li
           key={link.path}
           className={`px-4 py-3 font-semibold transition-colors hover:text-white ${
-            pathname === link.path ? "text-red-600 font-medium " : ""
+            pathname === link.path ? "font-medium text-red-600 " : ""
           }`}
         >
           <Link className="py-2" href={link.path} onClick={handleMenu}>

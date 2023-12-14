@@ -158,7 +158,6 @@ export async function Hero() {
               }`,
     }),
   });
-  console.log(res);
   return (
     <section className="opacityAnimation max-w-screen relative mx-auto mb-6 w-full max-w-screen-xl justify-center py-2 lg:mt-0">
       <Carousel />
