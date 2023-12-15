@@ -188,7 +188,6 @@ export default function Home() {
           <Review />
         </div>
       </section>
-      <div className="h-[200vh]" />
     </div>
   );
 }
