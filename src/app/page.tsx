@@ -190,8 +190,8 @@ export default function Home() {
                   className="text-black-80 w-full rounded border border-gray-300 bg-white px-3 py-1 text-base leading-8 outline-none transition-colors duration-200 ease-in-out focus:border-black/50 focus:ring-2 focus:ring-yellow-400"
                 />
               </div>
-              <button className="rounded border-0 bg-yellow-500 px-8 py-2 text-lg text-white transition-colors hover:bg-yellow-600 focus:outline-none">
-                Button
+              <button className="rounded border-0 bg-gradient-to-br from-amber-500 via-yellow-500 to-orange-400 px-8 py-2 text-sm text-white drop-shadow-sm shadow-lg tracking-wider font-semibold transition-colors hover:bg-yellow-600 focus:outline-none">
+                Wyślij
               </button>
               <p className="mt-3 text-xs text-black/70">
                 Literally you probably havent heard of them jean shorts.

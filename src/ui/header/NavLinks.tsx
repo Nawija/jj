@@ -59,9 +59,9 @@ export function NavLinksMobile({
             </Link>
           </li>
         ))}
-        <div className="flex lg:hidden">
+        <li className="flex lg:hidden">
           <SocialMedia />
-        </div>
+        </li>
       </ul>
 
   );

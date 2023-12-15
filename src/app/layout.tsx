@@ -5,7 +5,7 @@ import { Header } from "@/src/ui/header/Header";
 import { Footer } from "../ui/footer/Footer";
 
 export const metadata = {
-  title: "My app",
+  title: "Fotograf",
   description: "I have followed setup instructions carefully",
 };
 

@@ -7,12 +7,19 @@ const socialClass =
 export default function SocialMedia() {
   return (
     <>
-      <Link href="https://www.facebook.com/jarek.olszewski" target="_blank">
+      <Link
+        href="https://www.facebook.com/jarek.olszewski"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Facebook"
+      >
         <FaSquareFacebook className={socialClass} />
       </Link>
       <Link
         href="https://www.instagram.com/jarek.olszewski.fotografia/"
         target="_blank"
+        rel="noopener noreferrer"
+        title="Instagram"
       >
         <RiInstagramFill className={socialClass} />
       </Link>
