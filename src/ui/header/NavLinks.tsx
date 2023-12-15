@@ -43,7 +43,7 @@ export function NavLinksMobile({
   return (
 
       <ul
-        className={`fixed left-0 top-0 z-40 flex h-screen w-72 flex-col items-center justify-center space-y-4 bg-black/80 backdrop-blur-sm text-sm text-white/80 shadow-2xl transition-transform duration-200 lg:hidden ${
+        className={`fixed left-0 top-0 z-40 flex h-screen w-72 flex-col items-center justify-center space-y-4 bg-black/80 text-sm text-white/80 shadow-2xl transition-transform duration-200 lg:hidden ${
           showMenu ? "translate-x-0" : "-translate-x-full"
         }`}
       >

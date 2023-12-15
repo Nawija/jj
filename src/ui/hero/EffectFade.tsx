@@ -67,19 +67,19 @@ export async function EffectFadeCarousel() {
           disableOnInteraction: false,
         }}
         modules={[EffectFade, Autoplay]}
-        className="mySwiper relative -z-20 h-[650px]"
+        className="mySwiper relative -z-20 h-[580px]"
       >
         {imgSwiper.map((img, index) => (
           <SwiperSlide key={index}>
             <Image
               style={{
                 width: "100%",
-                height: "650px",
+                height: "580px",
                 objectFit: "cover",
                 objectPosition: `50% ${img.position}`,
               }}
-              height={1200}
-              width={1400}
+              height={1000}
+              width={1000}
               src={img.src}
               alt={img.alt}
               title={img.title}

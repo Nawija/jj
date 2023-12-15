@@ -27,7 +27,7 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between">
-        <Link href="/" className="flex-c relative z-50  lg:py-3">
+        <Link href="/" className="flex-c relative z-50 lg:py-3 pl-1">
           <div className="relative">
             <p
               className={`text-2xl transition-transform lg:text-3xl ${
