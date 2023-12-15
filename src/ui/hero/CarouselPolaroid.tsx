@@ -45,6 +45,8 @@ const imgSwiper = [
   },
 ];
 
+export const dynamic = true;
+
 export default function CarouselPolaroid() {
   return (
     <Swiper
@@ -52,17 +54,17 @@ export default function CarouselPolaroid() {
       freeMode={true}
       navigation={false}
       loop
-      speed={1000}
+      speed={500}
       autoplay={{
-        delay: 2000,
+        delay: 2600,
         disableOnInteraction: false,
       }}
-      spaceBetween={100}
+      spaceBetween={90}
       coverflowEffect={{
         rotate: 0,
         stretch: 0,
-        depth: 50,
-        modifier: 5,
+        depth: 20,
+        modifier: 3,
         slideShadows: false,
       }}
       modules={[Autoplay, EffectCoverflow]}
@@ -82,18 +84,16 @@ export default function CarouselPolaroid() {
     >
       {imgSwiper.map((slide, index) => (
         <SwiperSlide key={index}>
-          <div className="my-4 bg-white p-4 shadow-lg">
+          <div className="my-4 bg-white p-4 shadow-lg mx-2">
             <Image
               style={{
                 width: "100%",
-                height: '400px',
+                height: "400px",
                 objectFit: "cover",
-                borderRadius: "2px",
               }}
               loading="lazy"
-              draggable="false"
-              height={300}
-              width={400}
+              height={400}
+              width={200}
               src={slide.src}
               alt={slide.alt}
               sizes="(min-width: 1668px) 80vw, (max-width: 786px) 50vw, 33vw"

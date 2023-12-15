@@ -1,53 +1,38 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { playball } from "../fonts";
 import { NavLinksDesctop, NavLinksMobile, BurgerMenu } from "./NavLinks";
 import clsx from "clsx";
+import SocialMedia from "@/src/ui/header/SocialMedia";
 
 export function Header() {
   const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
   function handleMenu() {
     setShowMenu(!showMenu);
   }
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <header
       className={clsx(
-        `z-[999] flex w-full items-center justify-between px-3 py-1 lg:py-0 font-normal`,
+        "lg:absolute fixed left-0 top-0 z-[999] flex w-full items-center justify-between px-3 py-1 font-normal  lg:py-0 ",
         {
-          "sticky left-0 top-0 bg-white text-black shadow-lg": isScrolled,
+          "sticky left-0 top-0 bg-white text-black shadow-lg": pathname !== "/",
         },
+        { "text-white": pathname === "/" },
       )}
     >
       <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between">
-        <Link href="/" className={`flex-c relative z-50 lg:px-20 lg:py-3`}>
+        <Link href="/" className="flex-c relative z-50  lg:py-3">
           <div className="relative">
             <p
               className={`text-2xl transition-transform lg:text-3xl ${
                 playball.className
-              } ${showMenu ? "text-yellow-500" : ""}`}
+              } ${showMenu ? "text-white animate-pulse" : ""}`}
             >
               Jarek Olszewski
             </p>
@@ -60,6 +45,9 @@ export function Header() {
           pathname={pathname}
           handleMenu={handleMenu}
         />
+        <div className="hidden lg:flex">
+          <SocialMedia />
+        </div>
       </div>
     </header>
   );

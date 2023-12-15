@@ -2,18 +2,23 @@ import CarouselPolaroid from "@/src/ui/hero/CarouselPolaroid";
 import { EffectFadeCarousel } from "@/src/ui/hero/EffectFade";
 import Link from "next/link";
 import { SecondButton } from "../ui/buttons/SecondButton";
+import Image from "next/image";
 import ShadowBg from "../ui/ShadowBg";
 import Review from "../ui/hero/Reviews";
+
+import s1 from "@/public/images/s1.jpg";
+import s2 from "@/public/images/s2.jpg";
+import s3 from "@/public/images/s3.jpg";
 
 export default function Home() {
   return (
     <div className="anim-opacity mx-auto max-w-[2000px]">
       <section className="relative -z-10 w-full">
         <div className="absolute left-1/2 top-[74%] z-10 w-3/4 -translate-x-1/2 -translate-y-1/2 text-center text-white">
-          <p className=" mb-6 text-3xl font-semibold text-white/70 mix-blend-difference lg:text-8xl">
+          <p className=" mb-6 text-3xl font-semibold text-white/80 mix-blend-difference lg:text-8xl">
             PRAWDZIWA FOTOGRAFIA
           </p>
-          <p className="mx-auto mb-12 text-sm text-white/80 sm:w-3/4">
+          <p className="mx-auto mb-12 text-sm text-white/80 sm:w-3/4 lg:w-1/2">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt
             maiores at quis illum facilis magnam dolorum illo eius quidem autem,
             doloribus harum accusamus. Sed, illo similique. Aliquam, commodi.
@@ -21,7 +26,7 @@ export default function Home() {
           </p>
         </div>
         <EffectFadeCarousel />
-        <div className="absolute bottom-1 left-[49%] z-20 -translate-x-1/2 animate-bounce rounded-full p-2 text-white">
+        <div className="absolute bottom-1 left-1/2 z-20 -translate-x-1/2 animate-bounce rounded-full p-2 text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -70,10 +75,16 @@ export default function Home() {
       <section className="relative mx-auto w-full max-w-7xl items-center px-5 py-12 md:px-12 lg:px-24">
         <div className="mx-auto grid w-full grid-cols-1 gap-6 lg:grid-cols-3">
           <div className="p-6">
-            <img
+            <Image
               className="mb-4 w-full object-cover object-center md:h-36 lg:h-48"
-              src="https://cdn.pixabay.com/photo/2014/11/13/17/04/heart-529607_1280.jpg"
+              src={s1}
               alt="blog"
+              width={180}
+              height={180}
+              sizes="(max-width: 640px) 100vw,
+                (max-width: 1280px) 50vw,
+                (max-width: 1536px) 33vw,
+                25vw"
             />
 
             <h1 className="mb-4 text-xl font-semibold leading-none tracking-tighter text-black">
@@ -81,15 +92,21 @@ export default function Home() {
             </h1>
 
             <p className="mx-auto text-base font-medium leading-relaxed text-black/80">
-              Free and Premium themes, UI Kis, templates and landing pages
-              built with Tailwind CSS, HTML Next.js.
+              Free and Premium themes, UI Kis, templates and landing pages built
+              with Tailwind CSS, HTML Next.js.
             </p>
           </div>
           <div className="p-6">
-            <img
+            <Image
               className="mb-4 w-full object-cover object-center md:h-36 lg:h-96"
-              src="https://cdn.pixabay.com/photo/2019/11/10/11/13/couple-4615557_1280.jpg"
+              src={s2}
               alt="blog"
+              width={180}
+              height={180}
+              sizes="(max-width: 640px) 100vw,
+                (max-width: 1280px) 50vw,
+                (max-width: 1536px) 33vw,
+                25vw"
             />
 
             <h1 className="mb-4 text-xl font-semibold leading-none tracking-tighter text-black">
@@ -97,15 +114,22 @@ export default function Home() {
             </h1>
 
             <p className="mx-auto text-base font-medium leading-relaxed text-black/80">
-              Free and Premium themes, UI Kis, templates and landing pages
-              built with Tailwind CSS, HTML Next.js.
+              Free and Premium themes, UI Kis, templates and landing pages built
+              with Tailwind CSS, HTML Next.js.
             </p>
           </div>
           <div className="p-6">
-            <img
+            <Image
               className="mb-4 w-full object-cover object-center md:h-36 lg:h-48"
-              src="https://cdn.pixabay.com/photo/2014/11/13/17/04/heart-529607_1280.jpg"
+              src={s3}
               alt="blog"
+              placeholder="blur"
+              width={180}
+              height={180}
+              sizes="(max-width: 640px) 100vw,
+                (max-width: 1280px) 50vw,
+                (max-width: 1536px) 33vw,
+                25vw"
             />
 
             <h1 className="mb-4 text-xl font-semibold leading-none tracking-tighter text-black">
@@ -113,8 +137,8 @@ export default function Home() {
             </h1>
 
             <p className="mx-auto text-base font-medium leading-relaxed text-black/80">
-              Free and Premium themes, templates and landing pages
-              built with Tailwind CSS, HTML Next.js.
+              Free and Premium themes, templates and landing pages built with
+              Tailwind CSS, HTML Next.js.
             </p>
           </div>
         </div>
@@ -143,7 +167,7 @@ export default function Home() {
                   htmlFor="full-name"
                   className="text-sm leading-7 text-black/70"
                 >
-                  Full Name
+                  Imie
                 </label>
                 <input
                   type="text"
@@ -176,9 +200,16 @@ export default function Home() {
           </div>
         </div>
 
-        <img
+        <Image
           className="absolute left-0 top-0 -z-10 h-full w-full object-cover"
-          src="https://cdn.pixabay.com/photo/2016/11/14/03/30/bride-1822488_1280.jpg"
+          src={s3}
+          alt="......."
+          width={380}
+          height={380}
+          sizes="(max-width: 640px) 100vw,
+                (max-width: 1280px) 50vw,
+                (max-width: 1536px) 33vw,
+                25vw"
         />
         <ShadowBg z={30} />
       </section>

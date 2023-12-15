@@ -53,6 +53,8 @@ const reviewSwiper = [
   },
 ];
 
+export const dynamic = true;
+
 export default function Review() {
   return (
     <Swiper
@@ -100,7 +102,6 @@ export default function Review() {
                 className="mr-3 mt-8 inline-block h-12 w-12 rounded-full object-cover object-center"
                 src={slide.src}
                 loading="lazy"
-                draggable="false"
                 height={40}
                 width={40}
               />
