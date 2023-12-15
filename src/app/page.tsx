@@ -10,6 +10,9 @@ import s1 from "@/public/images/s1.jpg";
 import s2 from "@/public/images/s2.jpg";
 import s3 from "@/public/images/s3.jpg";
 
+
+import { crimson_Text } from "../ui/fonts";
+
 export default function Home() {
   return (
     <div className="anim-opacity mx-auto max-w-[2000px]">
@@ -26,7 +29,7 @@ export default function Home() {
           </p>
         </div>
         <EffectFadeCarousel />
-        <div className="absolute bottom-1 left-1/2 z-20 -translate-x-1/2 animate-bounce rounded-full p-2 text-white">
+        <div className="absolute bottom-1 lg:left-[49%] left-[45%] z-20 -translate-x-1/2 animate-bounce rounded-full p-2 text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -44,8 +47,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative flex flex-col lg:flex-row items-center justify-center py-12 lg:space-x-44">
-        <div className="flex flex-col items-center justify-center">
+      <section className="relative flex flex-col lg:flex-row items-center justify-center py-12  overflow-hidden w-full lg:space-x-44">
+        <div className="flex flex-col items-center justify-center order-1 lg:-order-none ">
           <Image
             className="w-full object-cover object-center h-80"
             src={s1}
@@ -71,7 +74,7 @@ export default function Home() {
         </div>
         <div className="max-w-screen-sm px-4">
           <small>Lorem ipsum dolor, sit amet consectetur</small>
-          <h1 className="text-3xl font-semibold ">
+          <h1 className={`text-3xl font-semibold ${crimson_Text.className}`}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
             eligendi corrupti in maxime
           </h1>
@@ -86,7 +89,7 @@ export default function Home() {
             possimus ipsam dignissimos ipsa, praesentium velit molestias, esse
             doloremque aliquid, accusamus temporibus repellendus
           </p>
-          <SecondButton className="mt-12">Czytaj Więcej</SecondButton>
+          <SecondButton className="my-8">Czytaj Więcej</SecondButton>
         </div>
       </section>
 

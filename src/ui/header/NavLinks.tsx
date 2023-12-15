@@ -19,8 +19,8 @@ export function NavLinksDesctop({ pathname }: { pathname: string }) {
         <li className="list-none" key={link.label}>
           <Link
             href={link.path}
-            className={`mx-3 px-2 py-2 text-[14px] font-medium transition-colors hover:text-amber-400   ${
-              pathname === link.path ? "text-amber-400" : ""
+            className={`mx-3 px-2 py-2 text-[14px] font-medium transition-colors hover:text-amber-600   ${
+              pathname === link.path ? "text-amber-600" : ""
             }`}
           >
             {link.label}
@@ -43,7 +43,7 @@ export function NavLinksMobile({
   return (
 
       <ul
-        className={`fixed left-0 top-0 z-40 flex h-screen w-72 flex-col items-center justify-center space-y-4 bg-black/80 text-sm text-white/80 shadow-2xl transition-transform duration-200 lg:hidden ${
+        className={`fixed left-0 top-0 z-40 flex h-screen w-72 flex-col items-center justify-center space-y-4 bg-black text-sm text-white/80 shadow-2xl transition-transform duration-200 lg:hidden ${
           showMenu ? "translate-x-0" : "-translate-x-full"
         }`}
       >
