@@ -44,6 +44,52 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="relative flex flex-col lg:flex-row items-center justify-center py-12 lg:space-x-44">
+        <div className="flex flex-col items-center justify-center">
+          <Image
+            className="w-full object-cover object-center h-80"
+            src={s1}
+            alt="blog"
+            width={180}
+            height={180}
+            sizes="(max-width: 640px) 100vw,
+                (max-width: 1280px) 50vw,
+                (max-width: 1536px) 33vw,
+                25vw"
+          />
+          <Image
+            className="-mt-20 ml-24 w-full bg-white object-cover object-center p-3 h-80"
+            src={s2}
+            alt="blog"
+            width={180}
+            height={180}
+            sizes="(max-width: 640px) 100vw,
+                (max-width: 1280px) 50vw,
+                (max-width: 1536px) 33vw,
+                25vw"
+          />
+        </div>
+        <div className="max-w-screen-sm px-4">
+          <small>Lorem ipsum dolor, sit amet consectetur</small>
+          <h1 className="text-3xl font-semibold ">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+            eligendi corrupti in maxime
+          </h1>
+          <div className="h-[1.3px] w-1/3 bg-yellow-500 my-4" />
+          <p className="mb-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+            possimus ipsam dignissimos ipsa, praesentium velit molestias, esse
+            doloremque aliquid, accusamus temporibus repellendus
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+            possimus ipsam dignissimos ipsa, praesentium velit molestias, esse
+            doloremque aliquid, accusamus temporibus repellendus
+          </p>
+          <SecondButton className="mt-12">Czytaj Więcej</SecondButton>
+        </div>
+      </section>
+
       <section className="relative w-full bg-gray-100 pb-12">
         <div className="mx-auto flex max-w-screen-sm flex-col items-center justify-center space-y-3 px-4 py-12 text-center">
           <small>Lorem ipsum dolor, sit amet consectetur</small>
