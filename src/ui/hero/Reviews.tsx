@@ -92,7 +92,7 @@ export default function Review() {
     >
       {reviewSwiper.map((slide, index) => (
         <SwiperSlide key={index}>
-          <div className="flex w-full max-w-lg flex-col rounded-xl border bg-white p-8 text-left lg:mx-auto">
+          <div className="mx-auto flex w-[90%] max-w-lg flex-col rounded-xl border bg-white p-8 text-left">
             <p className="mx-auto text-base leading-relaxed text-black/80">
               {slide.desc}
             </p>

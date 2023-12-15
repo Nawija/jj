@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import SocialMedia from "@/src/ui/header/SocialMedia";
+import clsx from "clsx";
 
 const links = [
   { path: "/", label: "Start" },
@@ -12,18 +13,24 @@ const links = [
   { path: "/kontakt", label: "Kontakt" },
 ];
 
-export function NavLinksDesctop({ pathname }: { pathname: string }) {
+export function NavLinksDesctop({
+  pathname,
+}: {
+  pathname: string;
+}) {
   return (
     <ul className="hidden items-center justify-center space-x-4 text-sm lg:flex">
       {links.map((link) => (
         <li className="list-none" key={link.label}>
           <Link
             href={link.path}
-            className={`mx-3 px-2 py-2 text-[14px] font-medium transition-colors hover:text-amber-600   ${
-              pathname === link.path ? "text-amber-600" : ""
+            className={`mx-3 px-2 py-2 text-[14px] font-medium transition-colors hover:text-amber-500   ${
+              pathname === link.path ? "text-amber-500" : ""
             }`}
           >
-            {link.label}
+            
+              {link.label}
+
           </Link>
         </li>
       ))}
@@ -41,29 +48,27 @@ export function NavLinksMobile({
   handleMenu: () => void;
 }) {
   return (
-
-      <ul
-        className={`fixed left-0 top-0 z-40 flex h-screen w-72 flex-col items-center justify-center space-y-4 bg-black text-sm text-white/80 shadow-2xl transition-transform duration-200 lg:hidden ${
-          showMenu ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
-        {links.map((link) => (
-          <li
-            key={link.path}
-            className={`px-4 py-3 font-semibold transition-colors hover:text-white ${
-              pathname === link.path ? "font-medium text-yellow-500 " : ""
-            }`}
-          >
-            <Link className="py-2" href={link.path} onClick={handleMenu}>
-              {link.label}
-            </Link>
-          </li>
-        ))}
-        <li className="flex lg:hidden">
-          <SocialMedia />
+    <ul
+      className={`fixed left-0 top-0 z-40 flex h-screen w-72 flex-col items-center justify-center space-y-4 bg-black text-sm text-white/80 shadow-2xl transition-transform duration-200 lg:hidden ${
+        showMenu ? "translate-x-0" : "-translate-x-full"
+      }`}
+    >
+      {links.map((link) => (
+        <li
+          key={link.path}
+          className={`px-4 py-3 font-semibold transition-colors hover:text-white ${
+            pathname === link.path ? "font-medium text-yellow-500 " : ""
+          }`}
+        >
+          <Link className="py-2" href={link.path} onClick={handleMenu}>
+            {link.label}
+          </Link>
         </li>
-      </ul>
-
+      ))}
+      <li className="flex lg:hidden">
+        <SocialMedia />
+      </li>
+    </ul>
   );
 }
 

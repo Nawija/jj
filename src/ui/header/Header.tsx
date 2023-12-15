@@ -42,9 +42,9 @@ export function Header() {
         {
           "sticky top-0 bg-white": pathname !== "/",
         },
-        
+
         {
-          " bg-white transition-colors duration-100 shadow-xl": colorNav,
+          " bg-white shadow-xl transition-colors duration-300": colorNav,
         },
       )}
     >
@@ -68,7 +68,7 @@ export function Header() {
           handleMenu={handleMenu}
         />
         <div className="hidden lg:flex">
-          <SocialMedia />
+          <SocialMedia colorNav={colorNav} pathname={pathname} />
         </div>
       </div>
     </header>
