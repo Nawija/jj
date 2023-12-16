@@ -14,7 +14,7 @@ export default function SocialMedia({
   return (
     <div
       className={`flex items-center justify-center ${
-        !colorNav && pathname == "/" ? "text-white/60" : "text-black/60"
+        !colorNav && pathname === "/" ? "text-white/60" : "text-black/60"
       }`}
     >
       <Link
