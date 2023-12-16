@@ -10,7 +10,7 @@ import s1 from "@/public/images/s1.jpg";
 import s2 from "@/public/images/s2.jpg";
 import s3 from "@/public/images/s3.jpg";
 
-import { playball, crimson_Text, raleway } from "@/src/ui/fonts";
+import { playball, raleway } from "@/src/ui/fonts";
 
 export default function Home() {
   return (
