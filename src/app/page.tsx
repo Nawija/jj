@@ -10,7 +10,7 @@ import s1 from "@/public/images/s1.jpg";
 import s2 from "@/public/images/s2.jpg";
 import s3 from "@/public/images/s3.jpg";
 
-import { crimson_Text } from "../ui/fonts";
+import { playball, crimson_Text, raleway } from "@/src/ui/fonts";
 
 export default function Home() {
   return (
@@ -72,9 +72,11 @@ export default function Home() {
           />
         </div>
         <div className="max-w-screen-sm px-4">
-          <small>Lorem ipsum dolor, sit amet consectetur</small>
+          <small className={`text-base ${playball.className}`}>
+            Lorem ipsum dolor, sit amet consectetur
+          </small>
           <h1
-            className={`text-2xl font-semibold lg:text-3xl ${crimson_Text.className}`}
+            className={`text-2xl font-semibold lg:text-3xl ${raleway.className}`}
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
             eligendi corrupti in maxime

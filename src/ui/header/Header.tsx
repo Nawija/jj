@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { playball } from "../fonts";
+import { playball } from "@/src/ui/fonts";
 import { NavLinksDesctop, NavLinksMobile, BurgerMenu } from "./NavLinks";
 import clsx from "clsx";
 import SocialMedia from "@/src/ui/header/SocialMedia";
@@ -65,6 +65,7 @@ export function Header() {
         <NavLinksMobile
           showMenu={showMenu}
           pathname={pathname}
+          colorNav={colorNav}
           handleMenu={handleMenu}
         />
         <div className="hidden lg:flex">

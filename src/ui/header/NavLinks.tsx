@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import SocialMedia from "@/src/ui/header/SocialMedia";
-import clsx from "clsx";
 
 const links = [
   { path: "/", label: "Start" },
@@ -13,11 +12,7 @@ const links = [
   { path: "/kontakt", label: "Kontakt" },
 ];
 
-export function NavLinksDesctop({
-  pathname,
-}: {
-  pathname: string;
-}) {
+export function NavLinksDesctop({ pathname }: { pathname: string }) {
   return (
     <ul className="hidden items-center justify-center space-x-4 text-sm lg:flex">
       {links.map((link) => (
@@ -28,9 +23,7 @@ export function NavLinksDesctop({
               pathname === link.path ? "text-red-500" : ""
             }`}
           >
-            
-              {link.label}
-
+            {link.label}
           </Link>
         </li>
       ))}
@@ -42,10 +35,12 @@ export function NavLinksMobile({
   showMenu,
   pathname,
   handleMenu,
+  colorNav,
 }: {
   showMenu: boolean;
   pathname: string;
   handleMenu: () => void;
+  colorNav: boolean;
 }) {
   return (
     <ul
@@ -66,7 +61,7 @@ export function NavLinksMobile({
         </li>
       ))}
       <li className="flex lg:hidden">
-        <SocialMedia />
+        <SocialMedia pathname={pathname} colorNav={colorNav} />
       </li>
     </ul>
   );
