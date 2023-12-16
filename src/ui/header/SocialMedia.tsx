@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { FaSquareFacebook } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
+import clsx from "clsx";
 
-const socialClass =
-  "m-1 p-1 text-3xl transition-colors duration-300 hover:text-white";
+const socialClass = "m-1 p-1 text-3xl transition-colors duration-300";
 export default function SocialMedia({
   colorNav,
   pathname,
@@ -23,7 +23,11 @@ export default function SocialMedia({
         rel="noopener noreferrer"
         title="Facebook"
       >
-        <FaSquareFacebook className={socialClass} />
+        <FaSquareFacebook
+          className={clsx(socialClass, {
+            "hover:text-black": colorNav,
+          })}
+        />
       </Link>
       <Link
         href="https://www.instagram.com/jarek.olszewski.fotografia/"
@@ -31,7 +35,11 @@ export default function SocialMedia({
         rel="noopener noreferrer"
         title="Instagram"
       >
-        <RiInstagramFill className={socialClass} />
+        <RiInstagramFill
+          className={clsx(socialClass, {
+            "hover:text-black": colorNav,
+          })}
+        />
       </Link>
     </div>
   );

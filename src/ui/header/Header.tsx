@@ -37,7 +37,7 @@ export function Header() {
     <header
       className={clsx(
         `fixed left-0 top-0 z-[999] flex w-full items-center justify-between px-3 py-1 font-normal  lg:py-0 ${
-          !colorNav && pathname === "/" ? "text-white" : "text-black"
+          !colorNav && pathname === "/" ? "text-white/70" : "text-black/60"
         }`,
         {
           "sticky top-0 bg-white": pathname !== "/",
@@ -61,7 +61,7 @@ export function Header() {
           </div>
         </Link>
         <BurgerMenu showMenu={showMenu} handleMenu={handleMenu} />
-        <NavLinksDesctop pathname={pathname} />
+        <NavLinksDesctop pathname={pathname} colorNav={colorNav} />
         <NavLinksMobile
           showMenu={showMenu}
           pathname={pathname}

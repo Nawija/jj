@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import SocialMedia from "@/src/ui/header/SocialMedia";
+import clsx from "clsx";
 
 const links = [
   { path: "/", label: "Start" },
@@ -12,16 +13,36 @@ const links = [
   { path: "/kontakt", label: "Kontakt" },
 ];
 
-export function NavLinksDesctop({ pathname }: { pathname: string }) {
+export function NavLinksDesctop({
+  pathname,
+  colorNav,
+}: {
+  pathname: string;
+  colorNav: boolean;
+}) {
   return (
     <ul className="hidden items-center justify-center space-x-4 text-sm lg:flex">
       {links.map((link) => (
         <li className="list-none" key={link.label}>
           <Link
             href={link.path}
-            className={`mx-3 px-2 py-2 text-[14px] font-medium transition-colors hover:text-red-500   ${
-              pathname === link.path ? "text-red-500" : ""
-            }`}
+            className={clsx(
+              `mx-3 px-2 py-2 text-[14px] font-semibold transition-colors`,
+              {
+                "hover:text-white": pathname !== link.path && !colorNav,
+              },
+              {
+                "text-white": pathname === link.path && !colorNav,
+              },
+              {
+                "hover:text-black": pathname !== link.path && colorNav,
+              },
+              {
+                "text-black":
+                  (pathname === link.path && colorNav) ||
+                  (pathname !== "/" && colorNav),
+              },
+            )}
           >
             {link.label}
           </Link>
