@@ -10,7 +10,6 @@ import s1 from "@/public/images/s1.jpg";
 import s2 from "@/public/images/s2.jpg";
 import s3 from "@/public/images/s3.jpg";
 
-
 import { crimson_Text } from "../ui/fonts";
 
 export default function Home() {
@@ -29,7 +28,7 @@ export default function Home() {
           </p>
         </div>
         <EffectFadeCarousel />
-        <div className="absolute bottom-1 lg:left-[49%] left-[45%] z-20 -translate-x-1/2 animate-bounce rounded-full p-2 text-white">
+        <div className="absolute bottom-1 left-[45%] z-20 -translate-x-1/2 animate-bounce rounded-full p-2 text-white lg:left-[49%]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -47,10 +46,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative flex flex-col lg:flex-row items-center justify-center py-12  overflow-hidden w-full lg:space-x-44">
-        <div className="flex flex-col items-center justify-center order-1 lg:-order-none ">
+      <section className="relative flex w-full flex-col items-center justify-center overflow-hidden  py-12 lg:flex-row lg:space-x-44">
+        <div className="order-1 flex flex-col items-center justify-center lg:-order-none ">
           <Image
-            className="w-full object-cover object-center h-80"
+            className="h-80 w-full object-cover object-center"
             src={s1}
             alt="blog"
             width={180}
@@ -61,7 +60,7 @@ export default function Home() {
                 25vw"
           />
           <Image
-            className="-mt-20 ml-24 w-full bg-white object-cover object-center p-3 h-80"
+            className="-mt-20 ml-24 h-80 w-full bg-white object-cover object-center p-3"
             src={s2}
             alt="blog"
             width={180}
@@ -74,11 +73,13 @@ export default function Home() {
         </div>
         <div className="max-w-screen-sm px-4">
           <small>Lorem ipsum dolor, sit amet consectetur</small>
-          <h1 className={`text-3xl font-semibold ${crimson_Text.className}`}>
+          <h1
+            className={`text-2xl font-semibold lg:text-3xl ${crimson_Text.className}`}
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
             eligendi corrupti in maxime
           </h1>
-          <div className="h-[1.3px] w-1/3 bg-yellow-500 my-4" />
+          <div className="my-4 h-[1.3px] w-1/3 bg-yellow-500" />
           <p className="mb-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
             possimus ipsam dignissimos ipsa, praesentium velit molestias, esse
