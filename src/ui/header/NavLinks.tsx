@@ -40,7 +40,8 @@ export function NavLinksDesctop({
                 "text-red-600": pathname !== "/" && pathname === link.path,
               },
               {
-                "text-white": pathname === link.path && !colorNav,
+                "text-white":
+                  pathname === link.path && !colorNav && pathname === "/",
               },
               {
                 "hover:text-black": pathname !== link.path && colorNav,

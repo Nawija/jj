@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import React from "react";
 import { Header } from "@/src/ui/header/Header";
 import { Footer } from "../ui/footer/Footer";
-import Messenger from "@/src/ui/buttons/Messenger";
+// import Messenger from "@/src/ui/buttons/Messenger";
 
 export const metadata = {
   title: "Fotograf",
@@ -23,8 +23,8 @@ export default function RootLayout({
       <body>
         <Header />
 
-        <main>{children}</main>
-        <Messenger />
+        <main className="min-h-screen">{children}</main>
+        {/* <Messenger /> */}
 
         <Footer />
       </body>

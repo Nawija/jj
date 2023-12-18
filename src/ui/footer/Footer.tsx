@@ -3,7 +3,7 @@ import { playball } from "@/src/ui/fonts";
 
 export function Footer() {
   return (
-    <footer className="z-40 bg-black p-4 md:p-8 lg:p-10 rounded-t-3xl px-12">
+    <footer className="z-40 bg-black p-4 md:p-8 lg:p-10 rounded-t-3xl md:rounded-none px-12">
       <div className="mx-auto max-w-screen-xl text-center">
         <Link
           href="/"
