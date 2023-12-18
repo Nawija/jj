@@ -1,11 +1,45 @@
-import { Images } from "@/src/ui/galeria/Images";
+import Image from "next/image";
+import Link from "next/link";
 
-import s1img from "@/public/images/s1.jpg";
-import s2img from "@/public/images/s2.jpg";
-import s3img from "@/public/images/s3.jpg";
-import s4img from "@/public/images/s4.jpg";
+const fetchPhotoDatoCms = async () => {
+  const res = await fetch("https://graphql.datocms.com/", {
+    next: { revalidate: 600 },
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN}`,
+    },
+    body: JSON.stringify({
+      query: `{
+        reportazZChrztu {
+          img {
+            id
+            title
+            responsiveImage {
+              src
+              srcSet
+              webpSrcSet
+            }
+            url
+          }
+        }
+            }`,
+    }),
+  });
+  return await res.json();
+};
 
-export default function Galeria() {
+interface Photo {
+  id: string;
+  title: string;
+  url: string;
+  responsiveImage: string;
+  webpSrcSet: string;
+}
+export default async function Galeria() {
+  const datoCmsPhoto = await fetchPhotoDatoCms();
+
   return (
     <>
       <div className="anim-opacity mx-2 columns-1 gap-4 text-sm sm:columns-2 lg:px-2 xl:columns-3 2xl:columns-5">
@@ -39,38 +73,49 @@ export default function Galeria() {
             Jarek Olszewski
           </p>
         </div>
-        <Images img={s1img} />
-        <Images img={s3img} />
-        <Images img={s2img} />
-        <Images img={s4img} />
-        <Images img={s3img} />
-        <Images img={s1img} />
-        <Images img={s2img} />
-        <Images img={s1img} />
-        <Images img={s3img} />
-        <Images img={s2img} />
-        <Images img={s4img} />
-        <Images img={s4img} />
+        {datoCmsPhoto.data.reportazZChrztu.img.map((photo: Photo) => (
+          <Link
+            key={photo.id}
+            href={`/galeria/${photo.id}`}
+            shallow
+            passHref
+            className="after:content after:shadow-highlight group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg"
+          >
+            <Image
+              alt="fotografia jarek olszewski"
+              className="transform rounded-lg shadow-xl brightness-90 transition will-change-auto group-hover:brightness-110"
+              src={photo.responsiveImage.webpSrcSet}
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/EP+pAAAABJ0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAANSURBVAiZY/j//z8ABf4C/qc1gYQAAAAASUVORK5CYII="
+              width={520}
+              height={380}
+              sizes="(max-width: 640px) 100vw,
+                (max-width: 1280px) 50vw,
+                (max-width: 1536px) 33vw,
+                25vw"
+            />
+          </Link>
+        ))}
       </div>
-      <footer className="mt-12 p-6 text-center font-semibold text-black sm:p-12 bg-gray-100">
+      <footer className="mt-12 bg-gray-100 p-6 text-center font-semibold text-black sm:p-12">
         Dziękuję za skorzystanie z moich usług, Podziel się opinią na{" "}
-        <a
+        <Link
           href="/"
           target="_blank"
           className="font-semibold text-red-600 hover:text-red-700"
           rel="noreferrer"
         >
           Google
-        </a>{" "}
+        </Link>{" "}
         lub{" "}
-        <a
+        <Link
           href="/"
           target="_blank"
           className="font-semibold text-red-600 hover:text-red-700"
           rel="noreferrer"
         >
           Facebook
-        </a>
+        </Link>
       </footer>
     </>
   );
