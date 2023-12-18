@@ -26,8 +26,8 @@ export default function Messenger() {
       }`}
     >
       <RiMessengerFill className="text-5xl" />
-      <div className="w-full h-full rounded-full bg-black/10 absolute top-0 left-0 -z-20 animate-ping" />
-      <div className="w-full h-full rounded-full bg-white border absolute top-0 left-0 -z-10 animate-ping" />
+      <div className="absolute left-0 top-0 -z-20 h-full w-full animate-ping rounded-full bg-black/10" />
+      <div className="absolute left-0 top-0 -z-10 h-full w-full animate-ping rounded-full border bg-white" />
     </div>
   );
 }

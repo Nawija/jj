@@ -265,7 +265,7 @@ export default function Home() {
         />
         <ShadowBg z={30} />
       </section>
-      <section className=" bg-gray-100 py-12">
+      <section className=" bg-gray-100 pt-12 pb-20">
         <div className="mx-auto max-w-screen-xl text-center">
           <h3 className="mb-6 text-2xl">Opinie Google</h3>
           <Review />

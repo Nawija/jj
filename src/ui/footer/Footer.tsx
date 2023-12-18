@@ -1,32 +1,37 @@
 import Link from "next/link";
+import { playball } from "@/src/ui/fonts";
 
 export function Footer() {
   return (
-    <footer className="p-4 bg-black/90 md:p-8 lg:p-10">
+    <footer className="z-40 bg-black p-4 md:p-8 lg:p-10 rounded-t-3xl px-12">
       <div className="mx-auto max-w-screen-xl text-center">
         <Link
           href="/"
-          className="flex items-center justify-center text-3xl font-semibold text-white"
+          className={`flex items-center justify-center py-6 text-3xl text-white ${playball.className}`}
         >
           Jarek Olszewski
         </Link>
-        <p className="my-6 text-white/70">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque impedit deleniti ad maxime vel nobis laboriosam obcaecati ratione assumenda quasi cumque quisquam, perferendis veritatis facere est, quidem quos, rem accusamus.
+        <p className="mb-10 mt-4 text-white/80">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
+          impedit deleniti ad maxime vel nobis laboriosam obcaecati ratione
+          assumenda quasi cumque quisquam, perferendis veritatis facere est,
+          quidem quos, rem accusamus.
         </p>
-        <ul className="mb-6 flex flex-wrap items-center justify-center text-white">
+
+        <ul className="mb-6 flex flex-wrap items-center justify-center border-y border-dashed border-gray-500 py-3 text-white">
           <li>
             <Link href="/" className="mr-4 hover:underline md:mr-6 ">
-              About
+              Start
             </Link>
           </li>
           <li>
             <Link href="/" className="mr-4 hover:underline md:mr-6">
-              Premium
+              O Mnie
             </Link>
           </li>
           <li>
             <Link href="/" className="mr-4 hover:underline md:mr-6 ">
-              Campaigns
+              Oferta
             </Link>
           </li>
           <li>
@@ -36,23 +41,24 @@ export function Footer() {
           </li>
           <li>
             <Link href="/" className="mr-4 hover:underline md:mr-6">
-              Affiliate Program
+              Galeria
             </Link>
           </li>
           <li>
             <Link href="/" className="mr-4 hover:underline md:mr-6">
-              FAQs
+              Blog
             </Link>
           </li>
           <li>
             <Link href="/" className="mr-4 hover:underline md:mr-6">
-              Contact
+              Kontakt
             </Link>
           </li>
         </ul>
+
         <span className="text-sm text-white/60  sm:text-center">
           © 2023{" "}
-          <Link href="/" className="hover:underline text-yellow-500">
+          <Link href="/" className="text-yellow-500 hover:underline">
             Seovileo™
           </Link>
           . All Rights Reserved.

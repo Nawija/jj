@@ -63,7 +63,7 @@ export async function EffectFadeCarousel() {
         navigation={false}
         speed={3000}
         autoplay={{
-          delay: 1500,
+          delay: 1000,
           disableOnInteraction: false,
         }}
         modules={[EffectFade, Autoplay]}

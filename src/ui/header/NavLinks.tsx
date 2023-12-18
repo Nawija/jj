@@ -27,9 +27,17 @@ export function NavLinksDesctop({
           <Link
             href={link.path}
             className={clsx(
-              `mx-3 px-2 py-2 text-[14px] font-semibold transition-colors`,
+              `mx-3 px-2 py-2 text-[14px] font-semibold transition-colors duration-75`,
               {
-                "hover:text-white": pathname !== link.path && !colorNav,
+                "hover:text-white":
+                  pathname === "/" && pathname !== link.path && !colorNav,
+              },
+              {
+                "hover:text-red-600":
+                  pathname !== "/" && pathname !== link.path && !colorNav,
+              },
+              {
+                "text-red-600": pathname !== "/" && pathname === link.path,
               },
               {
                 "text-white": pathname === link.path && !colorNav,
@@ -38,9 +46,8 @@ export function NavLinksDesctop({
                 "hover:text-black": pathname !== link.path && colorNav,
               },
               {
-                "text-black":
-                  (pathname === link.path && colorNav) ||
-                  (pathname !== "/" && colorNav),
+                "text-red-600":
+                  pathname === link.path && pathname === "/" && colorNav,
               },
             )}
           >

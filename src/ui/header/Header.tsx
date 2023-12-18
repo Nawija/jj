@@ -37,7 +37,7 @@ export function Header() {
     <header
       className={clsx(
         `fixed left-0 top-0 z-[999] flex w-full items-center justify-between px-3 py-1 font-normal  lg:py-0 ${
-          !colorNav && pathname === "/" ? "text-white/70" : "text-black/60"
+          !colorNav && pathname === "/" ? "text-white/70" : "text-black/70"
         }`,
         {
           "sticky top-0 bg-white": pathname !== "/",

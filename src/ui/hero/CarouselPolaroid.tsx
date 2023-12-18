@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCoverflow } from "swiper/modules";
+import { Autoplay, EffectCoverflow, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
+import { GiBranchArrow } from "react-icons/gi";
 
 import heroImg from "@/public/images/jarek-olszewski.jpg";
 import s1Img from "@/public/images/s1.jpg";
@@ -52,7 +53,10 @@ export default function CarouselPolaroid() {
     <Swiper
       effect={"coverflow"}
       freeMode={true}
-      navigation={false}
+      navigation={{
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      }}
       loop
       speed={500}
       autoplay={{
@@ -67,7 +71,7 @@ export default function CarouselPolaroid() {
         modifier: 3,
         slideShadows: false,
       }}
-      modules={[Autoplay, EffectCoverflow]}
+      modules={[Autoplay, EffectCoverflow, Navigation]}
       className="mySwiper mx-auto max-w-screen-xl"
       breakpoints={{
         320: {
@@ -84,7 +88,7 @@ export default function CarouselPolaroid() {
     >
       {imgSwiper.map((slide, index) => (
         <SwiperSlide key={index}>
-          <div className="my-4 bg-white p-4 shadow-lg mx-2">
+          <div className="mx-2 my-4 bg-white p-4 shadow-lg">
             <Image
               style={{
                 width: "100%",
@@ -102,6 +106,14 @@ export default function CarouselPolaroid() {
           </div>
         </SwiperSlide>
       ))}
+      <div className="flex items-center justify-center space-x-12 mt-3">
+        <div className="swiper-button-prev cursor-pointer">
+          <GiBranchArrow className="text-5xl rotate-[133deg]"/>
+        </div>
+        <div className="swiper-button-next cursor-pointer">
+          <GiBranchArrow className="text-5xl rotate-[-47deg]"/>
+        </div>
+      </div>
     </Swiper>
   );
 }

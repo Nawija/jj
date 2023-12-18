@@ -5,6 +5,7 @@ import Image from "next/image";
 import HeroImg from "@/public/images/jarek-olszewski.jpg";
 import Link from "next/link";
 import { MainButton } from "@/src/ui/buttons/MainButton";
+import { playball } from "@/src/ui/fonts";
 
 export default function OfertaPage() {
   const initialValues = Array(10).fill(null);
@@ -37,31 +38,12 @@ export default function OfertaPage() {
   };
 
   return (
-    <div className="anim-opacity opacityAnimation relative mx-auto mb-20 mt-[45vh] flex max-w-screen-2xl flex-wrap items-start justify-center md:mt-[60vh]">
-      <div className="fixed left-[45%] top-[49%] z-10 text-white -translate-x-1/2 -translate-y-1/2 animate-bounce rounded-full p-2 lg:left-1/2 lg:top-[60%]">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="h-6 w-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-          />
-        </svg>
-      </div>
-      <div className="fixed left-0 top-12 h-[30vh] w-full lg:top-[4rem] ">
+    <div className="anim-opacity opacityAnimation relative mx-auto mb-6 flex flex-wrap items-start justify-center">
+      <div className="absolute left-0 top-0 h-[30vh] w-full">
         <div className="lg:-z-10">
-          <Image
-            src={HeroImg}
-            alt="fotograf siedlce"
-          />
+          <Image src={HeroImg} alt="fotograf siedlce jarek olszewski" />
         </div>
-        <div className="absolute left-1/2 top-[100%] -translate-x-1/2 -translate-y-1/2 text-center text-lg font-semibold tracking-wide lg:left-[60%] lg:text-start lg:text-4xl lg:font-semibold text-white">
+        <div className={`absolute left-1/2 top-[100%] -translate-x-1/2 -translate-y-1/2 text-center text-lg font-semibold tracking-wider text-white md:text-black lg:left-[60%] lg:text-start lg:text-4xl lg:font-semibold ${playball.className}`}>
           <p>Wypełnij Formularz</p>
           <p className="-my-1 lg:my-0">lub</p>
           <p className="mb-3">Zadzwoń</p>
@@ -90,7 +72,7 @@ export default function OfertaPage() {
         </div>
       </div>
       <form
-        className="z-20 rounded-lg border bg-white p-6 text-black shadow-xl"
+        className="z-20 rounded-lg border bg-white p-6 text-black shadow-xl mt-[45vh] md:mt-[60vh]"
         action="https://public.herotofu.com/v1/d1061fe0-e21a-11ed-8300-fd92f9e8911a"
         method="post"
         accept-charset="UTF-8"

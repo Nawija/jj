@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
+import {
+  Autoplay,
+  EffectCoverflow,
+  Pagination,
+  Navigation,
+} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -13,6 +18,8 @@ import s1Img from "@/public/images/s1.jpg";
 import s2Img from "@/public/images/s2.jpg";
 import s3Img from "@/public/images/s3.jpg";
 import s4Img from "@/public/images/s4.jpg";
+
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 const reviewSwiper = [
   {
@@ -61,6 +68,10 @@ export default function Review() {
       effect={"coverflow"}
       freeMode={true}
       pagination={true}
+      navigation={{
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      }}
       loop
       speed={500}
       autoplay={{
@@ -75,8 +86,8 @@ export default function Review() {
         modifier: 2,
         slideShadows: false,
       }}
-      modules={[Autoplay, EffectCoverflow, Pagination]}
-      className="mySwiper mx-auto max-w-screen-xl"
+      modules={[Autoplay, EffectCoverflow, Pagination, Navigation]}
+      className="mySwiper group relative mx-auto max-w-screen-xl"
       breakpoints={{
         320: {
           slidesPerView: 1,
@@ -135,6 +146,12 @@ export default function Review() {
           </div>
         </SwiperSlide>
       ))}
+      <div className="swiper-button-next absolute right-1 top-1/2 -translate-y-1/2 z-50 rounded-full bg-black text-white p-3 lg:opacity-0 lg:group-hover:opacity-75 hover:bg-gray-800 transition-opacity delay-200 cursor-pointer">
+        <FaArrowRight />
+      </div>
+      <div className="swiper-button-prev absolute left-1 top-1/2 z-50 rounded-full bg-black text-white p-3 hidden lg:flex lg:opacity-0 lg:group-hover:opacity-75 hover:bg-gray-800 transition-opacity delay-200 cursor-pointer">
+        <FaArrowLeft />
+      </div>
     </Swiper>
   );
 }

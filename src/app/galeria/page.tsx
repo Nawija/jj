@@ -52,12 +52,12 @@ export default function Galeria() {
         <Images img={s4img} />
         <Images img={s4img} />
       </div>
-      <footer className="mt-12 p-6 text-center text-lg font-semibold text-black sm:p-12">
+      <footer className="mt-12 p-6 text-center font-semibold text-black sm:p-12 bg-gray-100">
         Dziękuję za skorzystanie z moich usług, Podziel się opinią na{" "}
         <a
           href="/"
           target="_blank"
-          className="font-semibold text-yellow-500 hover:text-yellow-600"
+          className="font-semibold text-red-600 hover:text-red-700"
           rel="noreferrer"
         >
           Google
@@ -66,7 +66,7 @@ export default function Galeria() {
         <a
           href="/"
           target="_blank"
-          className="font-semibold text-yellow-500 hover:text-yellow-600"
+          className="font-semibold text-red-600 hover:text-red-700"
           rel="noreferrer"
         >
           Facebook
