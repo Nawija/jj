@@ -1,6 +1,6 @@
 import Photos from "./Photos";
 
-interface Photos {
+interface Photo {
   id: string;
   url: string;
 }
@@ -8,7 +8,7 @@ interface Photos {
 interface DatoCmsData {
   data: {
     reportazZChrztu: {
-      img: Photos[];
+      img: Photo[];
     };
   };
 }
@@ -40,7 +40,7 @@ export default async function PhotoId({
   params: PhotoIdParams;
 }) {
   const datoCms = await fetchPhotoDatoCms();
-  const photos: Photos[] = datoCms.data.reportazZChrztu.img;
+  const photos: Photo[] = datoCms.data.reportazZChrztu.img;
   const photoIndex = photos.findIndex((photo) => photo.id === photoId);
   return <Photos photos={photos} photoIndex={photoIndex} />;
 }
