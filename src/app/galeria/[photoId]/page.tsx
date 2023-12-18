@@ -1,6 +1,19 @@
 import Photos from "./Photos";
 
-const fetchPhotoDatoCms = async () => {
+interface Photos {
+  id: string;
+  url: string;
+}
+
+interface DatoCmsData {
+  data: {
+    reportazZChrztu: {
+      img: Photos[];
+    };
+  };
+}
+
+const fetchPhotoDatoCms = async (): Promise<DatoCmsData> => {
   const res = await fetch("https://graphql.datocms.com/", {
     next: { revalidate: 60 },
     method: "POST",
@@ -17,9 +30,17 @@ const fetchPhotoDatoCms = async () => {
   return datoCms;
 };
 
-export default async function PhotoId({ params: { photoId } }) {
-  const datoCms = await fetchPhotoDatoCms(photoId);
-  const photos = datoCms.data.reportazZChrztu.img;
+interface PhotoIdParams {
+  photoId: string;
+}
+
+export default async function PhotoId({
+  params: { photoId },
+}: {
+  params: PhotoIdParams;
+}) {
+  const datoCms = await fetchPhotoDatoCms();
+  const photos: Photos[] = datoCms.data.reportazZChrztu.img;
   const photoIndex = photos.findIndex((photo) => photo.id === photoId);
   return <Photos photos={photos} photoIndex={photoIndex} />;
 }
