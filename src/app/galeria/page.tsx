@@ -1,7 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const fetchPhotoDatoCms = async () => {
+interface Photo {
+  id: string;
+  title: string;
+  url: string;
+  responsiveImage: {
+    webpSrcSet: string;
+  };
+}
+
+interface DatoCmsData {
+  data: {
+    reportazZChrztu: {
+      img: Photo[];
+    };
+  };
+}
+
+const fetchPhotoDatoCms = async (): Promise<DatoCmsData> => {
   const res = await fetch("https://graphql.datocms.com/", {
     next: { revalidate: 600 },
     method: "POST",
@@ -29,14 +46,6 @@ const fetchPhotoDatoCms = async () => {
   });
   return await res.json();
 };
-
-interface Photo {
-  id: string;
-  title: string;
-  url: string;
-  responsiveImage: string;
-  webpSrcSet: string;
-}
 export default async function Galeria() {
   const datoCmsPhoto = await fetchPhotoDatoCms();
 
