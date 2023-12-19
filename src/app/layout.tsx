@@ -20,7 +20,7 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#000000" />
       </head>
-      <body>
+      <body className="bg-black">
         <Header />
 
         <main className="min-h-screen">{children}</main>

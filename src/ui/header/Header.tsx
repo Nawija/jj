@@ -23,9 +23,9 @@ export function Header() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    // return () => {
-    //   window.removeEventListener("scroll", handleScroll);
-    // };
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   function handleMenu() {
@@ -35,15 +35,13 @@ export function Header() {
   return (
     <header
       className={clsx(
-        `fixed left-0 top-0 z-[999] flex w-full items-center justify-between px-3 py-1 font-normal  lg:py-0 ${
-          !colorNav && pathname === "/" ? "text-white/70" : "text-black/70"
-        }`,
+        `fixed left-0 top-0 z-[999] flex w-full items-center justify-between px-3 py-1 font-normal  text-white/70 lg:py-0`,
         {
-          "sticky top-0 bg-white": pathname !== "/",
+          "sticky top-0 bg-black": pathname !== "/",
         },
 
         {
-          " bg-white shadow-xl transition-colors duration-300": colorNav,
+          " bg-black transition-colors duration-200": colorNav,
         },
       )}
     >
@@ -68,7 +66,7 @@ export function Header() {
           handleMenu={handleMenu}
         />
         <div className="hidden lg:flex">
-          <SocialMedia colorNav={colorNav} pathname={pathname} />
+          <SocialMedia colorNav={colorNav} />
         </div>
       </div>
     </header>

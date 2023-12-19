@@ -33,21 +33,21 @@ export function NavLinksDesctop({
                   pathname === "/" && pathname !== link.path && !colorNav,
               },
               {
-                "hover:text-red-600":
+                "hover:text-yellow-500":
                   pathname !== "/" && pathname !== link.path && !colorNav,
               },
               {
-                "text-red-600": pathname !== "/" && pathname === link.path,
+                "text-yellow-500": pathname !== "/" && pathname === link.path,
               },
               {
                 "text-white":
                   pathname === link.path && !colorNav && pathname === "/",
               },
               {
-                "hover:text-black": pathname !== link.path && colorNav,
+                "hover:text-white": pathname !== link.path && colorNav,
               },
               {
-                "text-red-600":
+                "text-yellow-500":
                   pathname === link.path && pathname === "/" && colorNav,
               },
             )}

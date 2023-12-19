@@ -51,7 +51,7 @@ export default async function Galeria() {
 
   return (
     <>
-      <div className="anim-opacity mx-2 columns-1 gap-4 text-sm sm:columns-2 lg:px-2 xl:columns-3 2xl:columns-5">
+      <div className="anim-opacity mx-2 mt-3 columns-1 gap-4 text-sm sm:columns-2 lg:px-2 xl:columns-3 2xl:columns-5">
         <div className="after:content shadow-highlight after:shadow-highlight relative mb-5 flex h-[350px] flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-black/90 px-6 text-center text-black after:pointer-events-none after:absolute after:inset-0 after:rounded-lg lg:pt-0">
           <div className="absolute inset-0 flex items-center justify-center opacity-60">
             <span className="flex max-h-full max-w-full items-center justify-center">
@@ -106,12 +106,12 @@ export default async function Galeria() {
           </Link>
         ))}
       </div>
-      <footer className="mt-12 bg-gray-100 p-6 text-center font-semibold text-black sm:p-12">
+      <footer className="mt-12 bg-zinc-900 p-6 text-center font-semibold text-white sm:p-12">
         Dziękuję za skorzystanie z moich usług, Podziel się opinią na{" "}
         <Link
           href="/"
           target="_blank"
-          className="font-semibold text-red-600 hover:text-red-700"
+          className="font-semibold text-yellow-500 hover:text-yellow-400"
           rel="noreferrer"
         >
           Google
@@ -120,7 +120,7 @@ export default async function Galeria() {
         <Link
           href="/"
           target="_blank"
-          className="font-semibold text-red-600 hover:text-red-700"
+          className="font-semibold text-yellow-500 hover:text-yellow-400"
           rel="noreferrer"
         >
           Facebook

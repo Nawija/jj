@@ -17,7 +17,7 @@ export default function Home() {
     <div className="anim-opacity mx-auto max-w-[2000px]">
       <section className="relative -z-10 w-full">
         <div className="absolute left-1/2 top-[74%] z-10 w-3/4 -translate-x-1/2 -translate-y-1/2 text-center text-white">
-          <p className=" mb-6 text-3xl font-semibold text-white/80 mix-blend-difference lg:text-8xl">
+          <p className=" mb-6 text-3xl font-semibold text-white/90 mix-blend-difference lg:text-8xl">
             PRAWDZIWA FOTOGRAFIA
           </p>
           <p className="mx-auto mb-12 text-sm text-white/80 sm:w-3/4 lg:w-1/2">
@@ -49,7 +49,7 @@ export default function Home() {
       <section className="relative flex w-full flex-col items-center justify-center overflow-hidden  py-12 lg:flex-row lg:space-x-44">
         <div className="order-1 flex flex-col items-center justify-center lg:-order-none ">
           <Image
-            className="h-80 w-full object-cover object-center"
+            className="h-80 w-full bg-white object-cover object-center p-3"
             src={s1}
             alt="blog"
             width={180}
@@ -71,7 +71,7 @@ export default function Home() {
                 25vw"
           />
         </div>
-        <div className="max-w-screen-sm px-4">
+        <div className="max-w-screen-sm px-4 text-white/80">
           <small className={`text-base ${playball.className}`}>
             Lorem ipsum dolor, sit amet consectetur
           </small>
@@ -265,7 +265,7 @@ export default function Home() {
         />
         <ShadowBg z={30} />
       </section>
-      <section className=" bg-gray-100 pt-12 pb-20">
+      <section className=" bg-gray-100 pb-20 pt-12">
         <div className="mx-auto max-w-screen-xl text-center">
           <h3 className="mb-6 text-2xl">Opinie Google</h3>
           <Review />

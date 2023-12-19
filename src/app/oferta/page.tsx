@@ -43,7 +43,7 @@ export default function OfertaPage() {
         <div className="lg:-z-10">
           <Image src={HeroImg} alt="fotograf siedlce jarek olszewski" />
         </div>
-        <div className={`absolute left-1/2 top-[100%] -translate-x-1/2 -translate-y-1/2 text-center text-lg font-semibold tracking-wider text-white md:text-black lg:left-[60%] lg:text-start lg:text-4xl lg:font-semibold ${playball.className}`}>
+        <div className={`absolute left-1/2 top-[100%] -translate-x-1/2 -translate-y-1/2 text-center text-lg font-semibold tracking-wider text-white lg:left-[70%] lg:text-start lg:text-5xl lg:font-semibold ${playball.className}`}>
           <p>Wypełnij Formularz</p>
           <p className="-my-1 lg:my-0">lub</p>
           <p className="mb-3">Zadzwoń</p>

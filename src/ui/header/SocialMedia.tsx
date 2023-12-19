@@ -4,19 +4,9 @@ import { RiInstagramFill } from "react-icons/ri";
 import clsx from "clsx";
 
 const socialClass = "m-1 p-1 text-3xl transition-colors duration-300";
-export default function SocialMedia({
-  colorNav,
-  pathname,
-}: {
-  colorNav: boolean;
-  pathname: string;
-}) {
+export default function SocialMedia({ colorNav }: { colorNav: boolean }) {
   return (
-    <div
-      className={`flex items-center justify-center ${
-        !colorNav && pathname === "/" ? "text-white/60" : "text-black/60"
-      }`}
-    >
+    <div className={`text-white/6 flex items-center justify-center`}>
       <Link
         href="https://www.facebook.com/jarek.olszewski"
         target="_blank"
@@ -25,7 +15,7 @@ export default function SocialMedia({
       >
         <FaSquareFacebook
           className={clsx(socialClass, {
-            "hover:text-black": colorNav,
+            "hover:text-white": colorNav,
           })}
         />
       </Link>
@@ -37,7 +27,7 @@ export default function SocialMedia({
       >
         <RiInstagramFill
           className={clsx(socialClass, {
-            "hover:text-black": colorNav,
+            "hover:text-white": colorNav,
           })}
         />
       </Link>

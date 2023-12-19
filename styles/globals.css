@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: rgb(255, 255, 255);
-}
-
 .flex-c {
   display: flex;
   text-align: center;
@@ -53,7 +49,7 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #710202;
+  background: #d3b50c;
   margin: -4px 0 0 -4px;
 }
 .lds-roller div:nth-child(1) {
